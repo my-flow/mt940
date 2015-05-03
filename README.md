@@ -2,6 +2,7 @@ MT940 parser for Elixir
 =======================
 
 [![Build Status](https://travis-ci.org/my-flow/mt940.svg?branch=master)](https://travis-ci.org/my-flow/mt940)
+[![Hex.pm](https://img.shields.io/hexpm/v/mt940.svg?style=flat-square)](https://hex.pm/packages/mt940)
 
 MT940 is a standard structured SWIFT Customer Statement message. In short, it
 is an electronic bank account statement which has been developed by SWIFT. It

@@ -1,6 +1,7 @@
 defmodule ParserTest do
   use ExUnit.Case
   use MT940
+  use Timex
 
 
   test "short name of account owner" do
@@ -33,18 +34,48 @@ defmodule ParserTest do
   end
 
 
-  test "Statement Number/Sequence Number" do
+  test "statement Number" do
+    assert [":28C:": {1}] === ":28C:1" |> parse
+  end
+
+
+  test "statement Number/sequence Number" do
     assert [":28C:": {84, 1}] == ":28C:00084/001" |> parse
   end
 
 
-  test "Opening balance" do
-    assert [":60F:": {"C", "031002", "PLN", "40000,00"}] == ":60F:C031002PLN40000,00" |> parse
+  test "opening balance" do
+    assert [":60F:": {"C", Date.from({2003, 10, 2}), "PLN", "40000,00"}] == ":60F:C031002PLN40000,00" |> parse
   end
 
 
-  test "Opening balance with new line" do
-    assert [":60F:": {"C", "150401", "EUR", "2446,61"}] == ":60F:C150401EUR2446,61\r\n" |> parse
+  test "opening balance with new line" do
+    assert [":60F:": {"C", Date.from({2015, 4, 1}), "EUR", "2446,61"}] == ":60F:C150401EUR2446,61\r\n" |> parse
   end
 
+  test "non ref" do
+    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "0,60", "N913", "NONREF"}] === ":61:091211D000000000000,60N913NONREF\n" |> parse
+  end
+
+
+  test "missing booking date" do
+    assert [":61:": {Date.from({2009, 12, 10}), "", "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ===
+      ":61:091210C000000000007,50N021117301582" |> parse
+  end
+
+
+  test "existing booking date" do
+    assert [":61:": {Date.from({2009, 12, 10}), Date.from({2009, 12, 10}), "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ===
+      ":61:0912101210C000000000007,50N021117301582" |> parse
+  end
+
+
+  test "last Statement" do
+    assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", "160,00"}] === ":62F:D091220EUR000000000160,00" |> parse
+  end
+
+
+  test "unstructured account owner" do
+    assert [":86:": "MultiSafepay ID : 10269 (Direct Debit)"] === ":86:MultiSafepay ID : 10269 (Direct Debit)" |> parse
+  end
 end

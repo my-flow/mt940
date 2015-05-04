@@ -19,7 +19,9 @@ defmodule Mt940.Mixfile do
 
 
   defp deps do
-    []
+    [
+      {:timex, "~> 0.13.4"}
+    ]
   end
 
 

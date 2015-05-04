@@ -1,4 +1,5 @@
 defmodule MT940.Parser do
+  use Timex
 
   def parse(raw) when is_binary(raw) do
     raw
@@ -14,7 +15,7 @@ defmodule MT940.Parser do
   defp split(":25:", v) do
     case v |> String.contains?("/") do
       true  -> ~r/^(\d{8}|\w{8,11})\/(\d{1,23})(\D{3})?$/
-      false -> ~r/^(\w+)(\D{3})?$/
+      false -> ~r/^(.+)(\D{3})?$/
     end
     |> Regex.run(v, capture: :all_but_first)
     |> List.to_tuple
@@ -22,7 +23,7 @@ defmodule MT940.Parser do
 
 
   defp split(":28C:", v) do
-    ~r/^(\d+)\/(\d+)$/
+    ~r/^(\d+)\/?(\d+)?$/
     |> Regex.run(v, capture: :all_but_first)
     |> Enum.map(&String.to_integer/1)
     |> List.to_tuple
@@ -35,13 +36,21 @@ defmodule MT940.Parser do
 
 
   defp split(":61:", v) do
-    ~r/^(\d{6})(\d{4}?)(C|RC|D|RD)(\D)?([0-9,]{4,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
+    l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{4,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
     |> Regex.run(v, capture: :all_but_first)
+    |> List.update_at(4, &String.lstrip(&1, ?0))
+    |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))
+
+    booking_date = l |> Enum.at(0)
+
+    l
+    |> List.update_at(1, &DateFormat.parse!("#{booking_date.year}#{&1}", "{YYYY}{M}{D}"))
+    |> List.to_tuple
   end
 
 
   defp split(":86:", v) do
-    s = ~r/^(\d{3})(.)/
+    s = ~r/^(\d{3})(\D)/
     |> Regex.run(v, capture: :all_but_first)
 
     case s do
@@ -54,7 +63,7 @@ defmodule MT940.Parser do
         |> Enum.into(HashDict.new)
         {code, fields}
       _ ->
-        Regex.split(~r/\R/, v)
+        Regex.split(~r/\R/, v) |> Enum.at(0)
     end
   end
 
@@ -79,6 +88,8 @@ defmodule MT940.Parser do
   defp balance(v) do
     ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15}).*$/
     |> Regex.run(v, capture: :all_but_first)
+    |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
+    |> List.update_at(3, &String.lstrip(&1, ?0))
     |> List.to_tuple
   end
 

@@ -59,23 +59,23 @@ defmodule ParserTest do
 
 
   test "missing booking date" do
-    assert [":61:": {Date.from({2009, 12, 10}), "", "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ===
+    assert [":61:": {Date.from({2009, 12, 10}), "", "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ==
       ":61:091210C000000000007,50N021117301582" |> parse
   end
 
 
   test "existing booking date" do
-    assert [":61:": {Date.from({2009, 12, 10}), Date.from({2009, 12, 10}), "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ===
+    assert [":61:": {Date.from({2009, 12, 10}), Date.from({2009, 12, 10}), "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ==
       ":61:0912101210C000000000007,50N021117301582" |> parse
   end
 
 
   test "last Statement" do
-    assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", "160,00"}] === ":62F:D091220EUR000000000160,00" |> parse
+    assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", "160,00"}] == ":62F:D091220EUR000000000160,00" |> parse
   end
 
 
   test "unstructured account owner" do
-    assert [":86:": "MultiSafepay ID : 10269 (Direct Debit)"] === ":86:MultiSafepay ID : 10269 (Direct Debit)" |> parse
+    assert [":86:": "MultiSafepay ID : 10269 (Direct Debit)"] == ":86:MultiSafepay ID : 10269 (Direct Debit)" |> parse
   end
 end

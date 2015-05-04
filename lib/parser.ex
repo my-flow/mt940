@@ -43,8 +43,10 @@ defmodule MT940.Parser do
 
     booking_date = l |> Enum.at(0)
 
-    l
-    |> List.update_at(1, &DateFormat.parse!("#{booking_date.year}#{&1}", "{YYYY}{M}{D}"))
+    case booking_date do
+      nil -> l
+      _   -> l |> List.update_at(1, &DateFormat.parse!("#{booking_date.year}#{&1}", "{YYYY}{M}{D}"))
+    end
     |> List.to_tuple
   end
 

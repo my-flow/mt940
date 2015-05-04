@@ -19,8 +19,9 @@ deps: [{:mt940, "~> 0.1.0"}, ...]
 
 `use MT940` and `parse` the raw input:
 
-```
-":20:TELEWIZORY S.A.
+```elixir
+raw = "
+:20:TELEWIZORY S.A.
 :25:BPHKPLPK/320000546101
 :28C:00084/001
 :60F:C031002PLN40000,00
@@ -33,10 +34,14 @@ Card transaction
 ?3010600076?310000777777777777?32HUTA SZKLA TOPIC UL PRZEMY?33SLOWA 67 32-669 WROCLAW
 ?38PL08106000760000777777777777
 :62F:C020325PLN50040,00"
+```
 
+```elixir
 iex(2)> use MT940
 nil
+```
 
+```elixir
 iex(3)> parse raw
 [":20:": "TELEWIZORY S.A.", ":25:": {"BPHKPLPK", "320000546101"},
  ":28C:": {84, 1}, ":60F:": {"C", "031002", "PLN", "40000,00"},

@@ -54,7 +54,7 @@ defmodule ParserTest do
   end
 
   test "non ref" do
-    assert [":61:": {Date.from({2009, 12, 11}), "", "D", ",60", "N913", "NONREF"}] == ":61:091211D000000000000,60N913NONREF\n" |> parse
+    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "", ",60", "N913", "NONREF", "", "", "", ""}] == ":61:091211D000000000000,60N913NONREF\n" |> parse
   end
 
 

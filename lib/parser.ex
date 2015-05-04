@@ -41,11 +41,12 @@ defmodule MT940.Parser do
     |> List.update_at(4, &String.lstrip(&1, ?0))
     |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))
 
-    booking_date = l |> Enum.at(0)
+    value_date   = l |> Enum.at(0)
+    booking_date = l |> Enum.at(1)
 
     case booking_date do
-      nil -> l
-      _   -> l |> List.update_at(1, &DateFormat.parse!("#{booking_date.year}#{&1}", "{YYYY}{M}{D}"))
+      "" -> l
+      _  -> l |> List.update_at(1, &DateFormat.parse!("#{value_date.year}#{&1}", "{YYYY}{M}{D}"))
     end
     |> List.to_tuple
   end

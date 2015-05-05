@@ -34,13 +34,18 @@ defmodule ParserTest do
   end
 
 
-  test "statement Number" do
+  test "statement number" do
     assert [":28C:": {1}] === ":28C:1" |> parse
   end
 
 
-  test "statement Number/sequence Number" do
+  test "statement number/sequence number" do
     assert [":28C:": {84, 1}] == ":28C:00084/001" |> parse
+  end
+
+
+  test "field 28 (replaces 28C)" do
+    assert [":28:": {35401, 1}] == ":28:35401/1" |> parse
   end
 
 
@@ -54,7 +59,8 @@ defmodule ParserTest do
   end
 
   test "non ref" do
-    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "", ",60", "N913", "NONREF", "", "", "", ""}] == ":61:091211D000000000000,60N913NONREF\n" |> parse
+    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "", ",60", "N913", "NONREF", "", "", "", ""}] ==
+      ":61:091211D000000000000,60N913NONREF\n" |> parse
   end
 
 
@@ -70,12 +76,24 @@ defmodule ParserTest do
   end
 
 
-  test "last Statement" do
+  test "short amount" do
+    assert [":61:": {Date.from({2007, 12, 21}), Date.from({2007, 12, 20}), "C", "", "4,", "N196", "NONREF", "", "", "", ""}] ==
+      ":61:0712211220C4,N196NONREF" |> parse
+  end
+
+
+  test "last statement" do
     assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", "160,00"}] == ":62F:D091220EUR000000000160,00" |> parse
   end
 
 
   test "unstructured account owner" do
     assert [":86:": "MultiSafepay ID : 10269 (Direct Debit)"] == ":86:MultiSafepay ID : 10269 (Direct Debit)" |> parse
+  end
+
+
+  test "duplicate spaces" do
+    assert [":86:": "GEA NR 001732 19.12.07/18.51 POSTBANK NIJMEGEN GWK,PAS555"] ==
+      ":86:GEA   NR 001732   19.12.07/18.51\r\n  POSTBANK NIJMEGEN GWK,PAS555 " |> parse
   end
 end

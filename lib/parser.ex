@@ -22,21 +22,23 @@ defmodule MT940.Parser do
   end
 
 
+  defp split(":28:", v) do
+    v |> statement_number
+  end
+
+
   defp split(":28C:", v) do
-    ~r/^(\d+)\/?(\d+)?$/
-    |> Regex.run(v, capture: :all_but_first)
-    |> Enum.map(&String.to_integer/1)
-    |> List.to_tuple
+    v |> statement_number
   end
 
 
   defp split(":60" <> <<_>> <> ":", v) do
-    v |> remove_newline |> balance
+    v |> balance
   end
 
 
   defp split(":61:", v) do
-    l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{4,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
+    l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{2,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
     |> Regex.run(v, capture: :all_but_first)
     |> List.update_at(4, &String.lstrip(&1, ?0))
     |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))
@@ -58,21 +60,21 @@ defmodule MT940.Parser do
 
     case s do
       [code, separator] -> 
-        fields = v
-        |> remove_newline
-        |> String.split(Regex.compile!("(^\\d{3})?(\\#{separator})\\d{2}()"), on: :all_but_first, trim: true)
+        fields = v |> remove_newline |> String.split(Regex.compile!("(^\\d{3})?(\\#{separator})\\d{2}()"), on: :all_but_first, trim: true)
         |> Stream.chunk(2)
-        |> Stream.map(fn [k, v] -> {String.to_integer(k), v} end)
+        |> Stream.map(fn [k, v] -> {String.to_integer(k), v |> String.replace(~r/\s{2,}/, " ") |> String.strip} end)
         |> Enum.into(HashDict.new)
         {code, fields}
       _ ->
-        Regex.split(~r/\R/, v) |> Enum.at(0)
+        Regex.split(~r/\R/, v)
+        |> Enum.join(" ")
+        |> String.replace(~r/\s{2,}/, " ")
     end
   end
 
 
   defp split(":62" <> <<_>> <> ":", v) do
-    v |> remove_newline |> balance
+    v |> balance
   end
 
 
@@ -90,12 +92,19 @@ defmodule MT940.Parser do
 
   defp balance(v) do
     ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15}).*$/
-    |> Regex.run(v, capture: :all_but_first)
+    |> Regex.run(v |> remove_newline, capture: :all_but_first)
     |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
     |> List.update_at(3, &String.lstrip(&1, ?0))
     |> List.to_tuple
   end
 
+
+  defp statement_number(v) do
+    ~r/^(\d+)\/?(\d+)?$/
+    |> Regex.run(v |> remove_newline, capture: :all_but_first)
+    |> Enum.map(&String.to_integer/1)
+    |> List.to_tuple
+  end
 
   defp remove_newline(string) when is_binary(string) do
     ~r(\R) |> Regex.replace(string, "")

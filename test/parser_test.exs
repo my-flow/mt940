@@ -50,40 +50,41 @@ defmodule ParserTest do
 
 
   test "opening balance" do
-    assert [":60F:": {"C", Date.from({2003, 10, 2}), "PLN", "40000,00"}] == ":60F:C031002PLN40000,00" |> parse
+    assert [":60F:": {"C", Date.from({2003, 10, 2}), "PLN", Decimal.new("40000.00")}] == ":60F:C031002PLN40000,00" |> parse
   end
 
 
   test "opening balance with new line" do
-    assert [":60F:": {"C", Date.from({2015, 4, 1}), "EUR", "2446,61"}] == ":60F:C150401EUR2446,61\r\n" |> parse
+    assert [":60F:": {"C", Date.from({2015, 4, 1}), "EUR", Decimal.new("2446.61")}] == ":60F:C150401EUR2446,61\r\n" |> parse
   end
 
   test "non ref" do
-    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "", ",60", "N913", "NONREF", "", "", "", ""}] ==
+    assert [":61:": {Date.from({2009, 12, 11}), "", "D", "", Decimal.new("0.60"), "N913", "NONREF", "", "", "", ""}] ==
       ":61:091211D000000000000,60N913NONREF\n" |> parse
   end
 
 
   test "missing booking date" do
-    assert [":61:": {Date.from({2009, 12, 10}), "", "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ==
+    assert [":61:": {Date.from({2009, 12, 10}), "", "C", "", Decimal.new("7.50"), "N021", "117301582", "", "", "", ""}] ==
       ":61:091210C000000000007,50N021117301582" |> parse
   end
 
 
   test "existing booking date" do
-    assert [":61:": {Date.from({2009, 12, 10}), Date.from({2009, 12, 10}), "C", "", "7,50", "N021", "117301582", "", "", "", ""}] ==
+    assert [":61:": {Date.from({2009, 12, 10}), Date.from({2009, 12, 10}), "C", "", Decimal.new("7.50"), "N021", "117301582", "", "", "", ""}] ==
       ":61:0912101210C000000000007,50N021117301582" |> parse
   end
 
 
   test "short amount" do
-    assert [":61:": {Date.from({2007, 12, 21}), Date.from({2007, 12, 20}), "C", "", "4,", "N196", "NONREF", "", "", "", ""}] ==
+    assert [":61:": {Date.from({2007, 12, 21}), Date.from({2007, 12, 20}), "C", "", Decimal.new("4"), "N196", "NONREF", "", "", "", ""}] ==
       ":61:0712211220C4,N196NONREF" |> parse
   end
 
 
   test "last statement" do
-    assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", "160,00"}] == ":62F:D091220EUR000000000160,00" |> parse
+    assert [":62F:": {"D", Date.from({2009, 12, 20}), "EUR", Decimal.new("160.00")}] ==
+      ":62F:D091220EUR000000000160,00" |> parse
   end
 
 

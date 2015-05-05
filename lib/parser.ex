@@ -7,7 +7,7 @@ defmodule MT940.Parser do
     |> String.split(Regex.compile!("(\R?):\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)
     |> Stream.map(&String.strip/1)
     |> Stream.chunk(2)
-    |> Stream.map(fn [k, v] -> {k |> remove_newline |> String.to_atom(), split(k, v)} end)
+    |> Stream.map(fn [k, v] -> {k |> remove_newline |> String.to_atom, split(k, v)} end)
     |> Enum.into(Keyword.new)
   end
 
@@ -40,7 +40,7 @@ defmodule MT940.Parser do
   defp split(":61:", v) do
     l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{2,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
     |> Regex.run(v, capture: :all_but_first)
-    |> List.update_at(4, &String.lstrip(&1, ?0))
+    |> List.update_at(4, &convert_to_decimal(&1))
     |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))
 
     value_date   = l |> Enum.at(0)
@@ -94,7 +94,7 @@ defmodule MT940.Parser do
     ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15}).*$/
     |> Regex.run(v |> remove_newline, capture: :all_but_first)
     |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
-    |> List.update_at(3, &String.lstrip(&1, ?0))
+    |> List.update_at(3, &convert_to_decimal(&1))
     |> List.to_tuple
   end
 
@@ -105,6 +105,12 @@ defmodule MT940.Parser do
     |> Enum.map(&String.to_integer/1)
     |> List.to_tuple
   end
+
+
+  defp convert_to_decimal(amount) when is_binary(amount) do
+    amount |> String.replace(",", ".") |> Decimal.new
+  end
+
 
   defp remove_newline(string) when is_binary(string) do
     ~r(\R) |> Regex.replace(string, "")

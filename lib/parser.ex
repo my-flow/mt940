@@ -1,7 +1,17 @@
 defmodule MT940.Parser do
   use Timex
 
+
   def parse(raw) when is_binary(raw) do
+    raw
+    |> String.strip
+    |> String.split(~r/\R-\R/, trim: true)
+    |> Stream.map(&parse_message/1)
+    |> Enum.to_list
+  end
+
+
+  defp parse_message(raw) when is_binary(raw) do
     raw
     |> String.strip
     |> String.split(Regex.compile!("(\R?):\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)

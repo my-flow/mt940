@@ -14,49 +14,41 @@ is a end of day statement file which details all entries booked to an account.
 Include a dependency in your `mix.exs`:
 
 ```elixir
-deps: [{:mt940, "~> 0.1.0"}, ...]
+deps: [{:mt940, "~> 0.2.0"}, ...]
 ```
 
 `use MT940` and `parse` the raw input:
 
 ```elixir
-raw = "
-:20:TELEWIZORY S.A.
-:25:BPHKPLPK/320000546101
-:28C:00084/001
-:60F:C031002PLN40000,00
-:61:0310201020C20000,00FMSCNONREF//8327000090031789
-Card transaction
-:86:020?00Wyplata-(dysp/przel)?2008106000760000777777777777?2115617
-?22INFO INFO INFO INFO INFO INFO 1 END?23INFO INFO INFO INFO INFO INFO 2 END
-?24ZAPLATA ZA FABRYKATY DO TUB?25 - 200 S ZTUK, TRANZY STORY-
-?26300 SZT GR544 I OPORNIKI-5?2700 SZT GTX847 FAKTURA 333/ 2?28003.
-?3010600076?310000777777777777?32HUTA SZKLA TOPIC UL PRZEMY?33SLOWA 67 32-669 WROCLAW
-?38PL08106000760000777777777777
-:62F:C020325PLN50040,00"
-```
+defmodule Account do
+  use MT940
 
-```elixir
-iex(2)> use MT940
-nil
-```
 
-```elixir
-iex(3)> parse raw
-[":20:": "TELEWIZORY S.A.", ":25:": {"BPHKPLPK", "320000546101"},
- ":28C:": {84, 1}, ":60F:": {"C", "031002", "PLN", "40000,00"},
- ":61:": ["031020", "1020", "C", "", "20000,00", "FMSC", "NONREF", "//",
-  "8327000090031789", "\n", "Card transaction"],
- ":86:": {"020",
-  #HashDict<[{20, "08106000760000777777777777"}, {28, "003."},
-   {21, "15617? 22INFO INFO INFO INFO INFO INFO 1 END"},
-   {25, " - 200 S ZTUK, TRANZY STORY-"}, {27, "00 SZT GTX847 FAKTURA 333/ 2"},
-   {32, "HUTA SZKLA TOPIC UL PRZEMY"}, {0, "Wyplata-(dysp/przel)"},
-   {24, "ZAPLATA ZA FABRYKATY DO TUB"}, {26, "300 SZT GR544 I OPORNIKI-5"},
-   {38, "PL08106000760000777777777777"}, {33, "SLOWA 67 32-669 WROCLAW"},
-   {30, "10600076"}, {31, "0000777777777777"},
-   {23, "INFO INFO INFO INFO INFO INFO 2 END"}]>},
- ":62F:": {"C", "020325", "PLN", "50040,00"}]
+  def balance(raw) do
+    {_, _, currency, amount} = parse(raw) |> Enum.at(-1) |> Dict.get(:":62F:")
+    "#{amount} #{currency}"
+  end
+
+
+  def transactions(raw) do
+    parse(raw)
+    |> Stream.flat_map(&Keyword.take(&1, [:":61:", :":86:"]))
+    |> Stream.map(fn {_, v} -> v end)
+    |> Stream.chunk(2)
+    |> Enum.map(fn [{booking_date, _, _, _, amount, _, _, _, _, _, _}, {_, info}] ->
+
+      %{
+        booking_date: booking_date,
+        amount:       amount,
+        purpose:      info
+          |> Dict.take([20..29, 60..63] |> Enum.concat)
+          |> Dict.values
+          |> Enum.join
+      }
+    end)
+  end
+
+end
 ```
 
 

@@ -1,4 +1,4 @@
-defmodule Account do
+defmodule MT940.Account do
   use MT940
 
 

@@ -35,7 +35,7 @@ defmodule Account do
     |> Stream.flat_map(&Keyword.take(&1, [:":61:", :":86:"]))
     |> Stream.map(fn {_, v} -> v end)
     |> Stream.chunk(2)
-    |> Enum.map(fn [{booking_date, _, _, _, amount, _, _, _, _, _, _}, {_, info}] ->
+    |> Enum.map(fn [{_, booking_date, _, _, amount, _, _, _, _, _, _}, {_, info}] ->
 
       %{
         booking_date: booking_date,

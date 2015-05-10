@@ -97,4 +97,17 @@ defmodule ParserTest do
     assert [[":86:": "GEA NR 001732 19.12.07/18.51 POSTBANK NIJMEGEN GWK,PAS555"]] ==
       ":86:GEA   NR 001732   19.12.07/18.51\r\n  POSTBANK NIJMEGEN GWK,PAS555 " |> parse
   end
+
+
+  test "line breaks with \r\n" do
+    assert [[":20:": "MT940-1505020136", ":21:": "NONREF"]] ==
+      "\r\n:20:MT940-1505020136\r\n:21:NONREF" |> parse
+  end
+
+
+  test "line breaks with @@" do
+    assert [[":20:": "STARTUMS", ":25:": {"49999924", "0001581901"}]] ==
+      "@@:20:STARTUMS@@:25:49999924/0001581901" |> parse
+  end
+
 end

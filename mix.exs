@@ -8,7 +8,8 @@ defmodule Mt940.Mixfile do
       elixir: "~> 1.0",
       description: description,
       package: package,
-      deps: deps
+      deps: deps,
+      dialyzer: [plt_add_deps: true]
     ]
   end
 

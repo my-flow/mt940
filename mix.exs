@@ -9,7 +9,8 @@ defmodule Mt940.Mixfile do
       description: description,
       package: package,
       deps: deps,
-      dialyzer: [plt_add_deps: true]
+      dialyzer: [plt_add_deps: true],
+      test_coverage: [tool: ExCoveralls]
     ]
   end
 
@@ -21,8 +22,9 @@ defmodule Mt940.Mixfile do
 
   defp deps do
     [
-      {:decimal, "~> 1.1.0" },
-      {:timex,   "~> 0.13.4"}
+      {:decimal,     "~> 1.1.0" },
+      {:excoveralls, "~> 0.3", only: [:dev, :test]},
+      {:timex,       "~> 0.13.4"}
     ]
   end
 

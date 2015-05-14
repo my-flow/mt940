@@ -2,7 +2,7 @@ MT940 parser for Elixir
 =======================
 
 [![Build Status](https://travis-ci.org/my-flow/mt940.svg?branch=master)](https://travis-ci.org/my-flow/mt940)
-[![Hex.pm](https://img.shields.io/hexpm/v/mt940.svg?style=flat-square)](https://hex.pm/packages/mt940)
+[![Hex.pm](https://img.shields.io/hexpm/v/mt940.svg)](https://hex.pm/packages/mt940)
 [![Coverage Status](https://coveralls.io/repos/my-flow/mt940/badge.svg?branch=master)](https://coveralls.io/r/my-flow/mt940?branch=master)
 
 MT940 is a standard structured SWIFT Customer Statement message. In short, it

@@ -2,14 +2,14 @@ defmodule MT940.Account do
   use MT940
 
 
-  def balance(raw) do
-    {_, _, currency, amount} = parse(raw) |> Enum.at(-1) |> Dict.get(:":62F:")
+  def balance(raw) when is_binary(raw) do
+    {_, _, currency, amount} = parse!(raw) |> Enum.at(-1) |> Dict.get(:":62F:")
     "#{amount} #{currency}"
   end
 
 
-  def transactions(raw) do
-    parse(raw)
+  def transactions(raw) when is_binary(raw) do
+    parse!(raw)
     |> Stream.flat_map(&Keyword.take(&1, [:":61:", :":86:"]))
     |> Stream.map(fn {_, v} -> v end)
     |> Stream.chunk(2)

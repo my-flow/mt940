@@ -2,21 +2,36 @@ defmodule MT940.Parser do
   use Timex
 
 
+  def parse!(raw) when is_binary(raw) do
+    case parse(raw) do
+      {:ok, content} -> content
+      {:error, reason} ->
+        raise ArgumentError, message: reason
+    end
+  end
+
+
   def parse(raw) when is_binary(raw) do
     line_separator = ~r/^(.*)\:/rs
     |> Regex.run(raw, capture: :all_but_first)
-    |> Enum.at(0)
 
-    line_separator = case line_separator do
-      "" -> "\\R"
-      _  -> line_separator
+    case line_separator do
+      [""|_] -> raw |> split_messages_into_parts "\\R"
+      [hd|_]  -> raw |> split_messages_into_parts hd
+      _     -> {:error, "Invalid format. Could not identify line separator."}
     end
+  end
 
-    raw
+
+  defp split_messages_into_parts(raw, line_separator)
+    when is_binary(raw) and is_binary(line_separator) do
+
+    content = raw
     |> String.strip
     |> String.split(Regex.compile!("#{line_separator}-#{line_separator}"), trim: true)
     |> Stream.map(&parse_message(&1, line_separator))
     |> Enum.to_list
+    {:ok, content}
   end
 
 
@@ -26,7 +41,12 @@ defmodule MT940.Parser do
     |> String.split(Regex.compile!("(#{line_separator})?:\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)
     |> Stream.map(&String.strip/1)
     |> Stream.chunk(2)
-    |> Stream.map(fn [k, v] -> {k |> remove_newline(line_separator) |> String.to_atom, split(k, v, line_separator)} end)
+    |> Stream.map(fn [k, v] ->
+        {
+          k |> remove_newline!(line_separator) |> String.to_atom,
+          split(k, v, line_separator)
+        }
+      end)
     |> Enum.into(Keyword.new)
   end
 
@@ -79,7 +99,9 @@ defmodule MT940.Parser do
 
     case s do
       [code, separator] -> 
-        fields = v |> remove_newline(line_separator) |> String.split(Regex.compile!("(^\\d{3})?(\\#{separator})\\d{2}()"), on: :all_but_first, trim: true)
+        fields = v
+        |> remove_newline!(line_separator)
+        |> String.split(Regex.compile!("(^\\d{3})?(\\#{separator})\\d{2}()"), on: :all_but_first, trim: true)
         |> Stream.chunk(2)
         |> Stream.map(fn [k, v] -> {String.to_integer(k), v |> String.replace(~r/\s{2,}/, " ") |> String.strip} end)
         |> Enum.into(HashDict.new)
@@ -100,6 +122,8 @@ defmodule MT940.Parser do
   defp split(":90" <> <<_>> <> ":", v, _) do
     ~r/^(\d{1,5})(\w{3})([0-9,]{1,15})$/
     |> Regex.run(v, capture: :all_but_first)
+    |> List.update_at(0, &String.to_integer/1)
+    |> List.update_at(2, &convert_to_decimal/1)
     |> List.to_tuple
   end
 
@@ -111,7 +135,7 @@ defmodule MT940.Parser do
 
   defp balance(v, line_separator) do
     ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15}).*$/
-    |> Regex.run(v |> remove_newline(line_separator), capture: :all_but_first)
+    |> Regex.run(v |> remove_newline!(line_separator), capture: :all_but_first)
     |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
     |> List.update_at(3, &convert_to_decimal(&1))
     |> List.to_tuple
@@ -120,7 +144,7 @@ defmodule MT940.Parser do
 
   defp statement_number(v, line_separator) do
     ~r/^(\d+)\/?(\d+)?$/
-    |> Regex.run(v |> remove_newline(line_separator), capture: :all_but_first)
+    |> Regex.run(v |> remove_newline!(line_separator), capture: :all_but_first)
     |> Enum.map(&String.to_integer/1)
     |> List.to_tuple
   end
@@ -131,7 +155,7 @@ defmodule MT940.Parser do
   end
 
 
-  defp remove_newline(string, line_separator) when is_binary(string) do
+  defp remove_newline!(string, line_separator) when is_binary(string) do
     Regex.compile!(line_separator) |> Regex.replace(string, "")
   end
 end

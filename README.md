@@ -5,9 +5,9 @@ MT940 parser for Elixir
 [![Hex.pm](https://img.shields.io/hexpm/v/mt940.svg)](https://hex.pm/packages/mt940)
 [![Coverage Status](https://coveralls.io/repos/my-flow/mt940/badge.svg?branch=master)](https://coveralls.io/r/my-flow/mt940?branch=master)
 
-MT940 is a standard structured SWIFT Customer Statement message. In short, it
-is an electronic bank account statement which has been developed by SWIFT. It
-is a end of day statement file which details all entries booked to an account.
+This is a library to parse account statements which are formatted as MT940.
+MT940 is a standard structured SWIFT Customer Statement message. It is an
+end-of-day statement file which details all entries booked to a bank account.
 
 
 ## Basic usage
@@ -15,10 +15,10 @@ is a end of day statement file which details all entries booked to an account.
 Include a dependency in your `mix.exs`:
 
 ```elixir
-deps: [{:mt940, "~> 0.2.0"}, ...]
+deps: [{:mt940, "~> 0.2.0"}, …]
 ```
 
-`use MT940` and `parse` the raw input:
+`use MT940` and `parse!` the raw input:
 
 ```elixir
 defmodule MT940.Account do
@@ -51,6 +51,12 @@ defmodule MT940.Account do
 
 end
 ```
+
+
+## Specification
+
+Find the specification in the [MT940 Format Overview](http://www.sepaforcorporates.com/swift-for-corporates/account-statement-mt940-file-format-overview/)
+or in the [SWIFT MT 940 Customer Statement Message Report](http://martin.hinner.info/bankconvert/swift_mt940_942.pdf).
 
 
 ## Copyright & License

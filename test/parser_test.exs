@@ -4,9 +4,21 @@ defmodule ParserTest do
   use Timex
 
 
-  test "invalid format" do
-    assert {:error, "Invalid format. Could not identify line separator."} ==
+  test "invalid format, no key found" do
+    assert {:error, :badarg} ==
       "asdfghjkl" |> parse
+  end
+
+
+  test "invalid format, key does not match expected length" do
+    assert {:error, :badarg} ==
+      ":20STARTUMS:25:74061813/0100033626" |> parse
+  end
+
+
+  test "2 lines" do
+    assert [[":20:": "STARTUMS", ":25:": {"74061813", "0100033626"}]] ==
+      ":20:STARTUMS:25:74061813/0100033626" |> parse!
   end
 
 

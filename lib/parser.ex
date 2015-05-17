@@ -17,8 +17,8 @@ defmodule MT940.Parser do
 
     case line_separator do
       [""|_] -> raw |> split_messages_into_parts "\\R"
-      [hd|_]  -> raw |> split_messages_into_parts hd
-      _     -> {:error, "Invalid format. Could not identify line separator."}
+      [hd|_] -> raw |> split_messages_into_parts hd
+      _      -> {:error, :badarg}
     end
   end
 
@@ -26,27 +26,40 @@ defmodule MT940.Parser do
   defp split_messages_into_parts(raw, line_separator)
     when is_binary(raw) and is_binary(line_separator) do
 
-    content = raw
+    messages = raw
     |> String.strip
     |> String.split(Regex.compile!("#{line_separator}-#{line_separator}"), trim: true)
     |> Stream.map(&parse_message(&1, line_separator))
-    |> Enum.to_list
-    {:ok, content}
+
+    case messages |> Enum.filter(fn m -> case m do
+          {:error, _} -> true
+          _           -> false
+        end
+      end) do
+      [hd|_] -> hd
+      _      -> {:ok, messages |> Enum.to_list}
+    end
   end
 
 
   defp parse_message(raw, line_separator) when is_binary(raw) do
-    raw
+    parts = raw
     |> String.strip
-    |> String.split(Regex.compile!("(#{line_separator})?:\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)
+    |> String.split(Regex.compile!("(#{line_separator}?)?:\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)
     |> Stream.map(&String.strip/1)
     |> Stream.chunk(2)
-    |> Stream.map(fn [k, v] ->
-        {
-          k |> remove_newline!(line_separator) |> String.to_atom,
-          split(k, v, line_separator)
-        }
-      end)
+    |> Stream.map(fn [k, v] -> [k |> remove_newline!(line_separator), v] end)
+
+    case parts |> Enum.all?(fn [k, _] -> ~r/^:\d{1,2}\w?:/ |> Regex.match?(k) end) do
+      true  -> to_keywords(parts, line_separator)
+      false -> {:error, :badarg}
+    end
+  end
+
+
+  defp to_keywords(parts, line_separator) do
+    parts
+    |> Stream.map(fn [k, v] -> { String.to_atom(k), split(k, v, line_separator) } end)
     |> Enum.into(Keyword.new)
   end
 

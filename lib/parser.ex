@@ -1,16 +1,47 @@
 defmodule MT940.Parser do
-  use Timex
+  import MT940.TagHandler
+  import Helper
+
+  @moduledoc ~S"""
+  This module contains functions to parse SWIFT's MT940 messages.
+
+  ## API
+
+  The `parse` function in this module returns `{:ok, result}`
+  in case of success, `{:error, reason}` otherwise. It is also
+  followed by a variant that ends with `!` which returns the
+  result (without the `{:ok, result}` tuple) in case of success
+  or raises an exception in case it fails. For example:
+
+      use MT940
+
+      parse(":20:TELEWIZORY S.A.")
+      #=> {:ok, [[":20:": "TELEWIZORY S.A."]]}
+
+      parse("invalid")
+      #=> {:error, :badarg}
+
+      parse!(":20:TELEWIZORY S.A.")
+      #=> [[":20:": "TELEWIZORY S.A."]]
+
+      parse!("invalid")
+      #=> raises ArgumentError
+
+  In general, a developer should use the former in case he wants
+  to react if the raw input cannot be parsed. The latter should
+  be used when the developer expects his software to fail in case
+  the raw input cannot be parsed (i.e. it is literally an exception).
+  """
 
 
-  def parse!(raw) when is_binary(raw) do
-    case parse(raw) do
-      {:ok, content} -> content
-      {:error, reason} ->
-        raise ArgumentError, message: reason
-    end
-  end
+  @doc """
+  Returns `{:ok, result}`, where `result` is a list of SWIFT MT940 messages,
+  or `{:error, reason}` if an error occurs.
 
+  Typical error reasons:
 
+    * `:badarg`  - the format of the raw input is not MT940
+  """
   def parse(raw) when is_binary(raw) do
     line_separator = ~r/^(.*)\:/rs
     |> Regex.run(raw, capture: :all_but_first)
@@ -19,6 +50,19 @@ defmodule MT940.Parser do
       [""|_] -> raw |> split_messages_into_parts "\\R"
       [hd|_] -> raw |> split_messages_into_parts hd
       _      -> {:error, :badarg}
+    end
+  end
+
+
+  @doc """
+  Returns list of SWIFT MT940 messages or raises
+  `ArgumentError` if an error occurs.
+  """
+  def parse!(raw) when is_binary(raw) do
+    case parse(raw) do
+      {:ok, result}     -> result
+      {:error, :badarg} -> raise ArgumentError
+      {:error, _}       -> raise RuntimeError
     end
   end
 
@@ -61,114 +105,5 @@ defmodule MT940.Parser do
     parts
     |> Stream.map(fn [k, v] -> { String.to_atom(k), split(k, v, line_separator) } end)
     |> Enum.into(Keyword.new)
-  end
-
-
-  defp split(":25:", v, _) do
-    case v |> String.contains?("/") do
-      true  -> ~r/^(\d{8}|\w{8,11})\/(\d{1,23})(\D{3})?$/
-      false -> ~r/^(.+)(\D{3})?$/
-    end
-    |> Regex.run(v, capture: :all_but_first)
-    |> List.to_tuple
-  end
-
-
-  defp split(":28:", v, line_separator) do
-    v |> statement_number(line_separator)
-  end
-
-
-  defp split(":28C:", v, line_separator) do
-    v |> statement_number(line_separator)
-  end
-
-
-  defp split(":60" <> <<_>> <> ":", v, line_separator) do
-    v |> balance(line_separator)
-  end
-
-
-  defp split(":61:", v, _) do
-    l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{2,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
-    |> Regex.run(v, capture: :all_but_first)
-    |> List.update_at(4, &convert_to_decimal(&1))
-    |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))
-
-    value_date   = l |> Enum.at(0)
-    booking_date = l |> Enum.at(1)
-
-    case booking_date do
-      "" -> l
-      _  -> l |> List.update_at(1, &DateFormat.parse!("#{value_date.year}#{&1}", "{YYYY}{M}{D}"))
-    end
-    |> List.to_tuple
-  end
-
-
-  defp split(":86:", v, line_separator) do
-    s = ~r/^(\d{3})(\D)/
-    |> Regex.run(v, capture: :all_but_first)
-
-    case s do
-      [code, separator] -> 
-        fields = v
-        |> remove_newline!(line_separator)
-        |> String.split(Regex.compile!("(^\\d{3})?(\\#{separator})\\d{2}()"), on: :all_but_first, trim: true)
-        |> Stream.chunk(2)
-        |> Stream.map(fn [k, v] -> {String.to_integer(k), v |> String.replace(~r/\s{2,}/, " ") |> String.strip} end)
-        |> Enum.into(HashDict.new)
-        {code, fields}
-      _ ->
-        Regex.split(Regex.compile!(line_separator), v)
-        |> Enum.join(" ")
-        |> String.replace(~r/\s{2,}/, " ")
-    end
-  end
-
-
-  defp split(":62" <> <<_>> <> ":", v, line_separator) do
-    v |> balance(line_separator)
-  end
-
-
-  defp split(":90" <> <<_>> <> ":", v, _) do
-    ~r/^(\d{1,5})(\w{3})([0-9,]{1,15})$/
-    |> Regex.run(v, capture: :all_but_first)
-    |> List.update_at(0, &String.to_integer/1)
-    |> List.update_at(2, &convert_to_decimal/1)
-    |> List.to_tuple
-  end
-
-
-  defp split(_, v, _) when is_binary(v) do
-    v
-  end
-
-
-  defp balance(v, line_separator) do
-    ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15}).*$/
-    |> Regex.run(v |> remove_newline!(line_separator), capture: :all_but_first)
-    |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
-    |> List.update_at(3, &convert_to_decimal(&1))
-    |> List.to_tuple
-  end
-
-
-  defp statement_number(v, line_separator) do
-    ~r/^(\d+)\/?(\d+)?$/
-    |> Regex.run(v |> remove_newline!(line_separator), capture: :all_but_first)
-    |> Enum.map(&String.to_integer/1)
-    |> List.to_tuple
-  end
-
-
-  defp convert_to_decimal(amount) when is_binary(amount) do
-    amount |> String.replace(",", ".") |> Decimal.new
-  end
-
-
-  defp remove_newline!(string, line_separator) when is_binary(string) do
-    Regex.compile!(line_separator) |> Regex.replace(string, "")
   end
 end

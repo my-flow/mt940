@@ -9,6 +9,8 @@ defmodule Mt940.Mixfile do
       description: description,
       package: package,
       deps: deps,
+      name: "MT940 Parser",
+      source_url: "https://github.com/my-flow/mt940",
       dialyzer: [plt_add_deps: true],
       test_coverage: [tool: ExCoveralls]
     ]
@@ -24,6 +26,8 @@ defmodule Mt940.Mixfile do
     [
       {:decimal,     "~> 1.1.0" },
       {:excoveralls, "~> 0.3", only: [:dev, :test]},
+      {:earmark,     "~> 0.1", only: :dev},
+      {:ex_doc,      "~> 0.7", only: :dev},
       {:timex,       "~> 0.13.4"}
     ]
   end

@@ -31,7 +31,7 @@ defmodule MT940.TagHandler do
 
 
   def split(":61:", v, _) do
-    l = ~r/^(\d{6})(\d{4})?(C|RC|D|RD)(\D)?([0-9,]{2,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
+    l = ~r/^(\d{6})(\d{4}|)(C|RC|D|RD)(\D?)([0-9,]{2,15})(\w{4})(NONREF|.{1,22})(\/\/)?(\w{0,16})?([\s\R]{1,2})?(.{0,34})?$/
     |> Regex.run(v, capture: :all_but_first)
     |> List.update_at(4, &convert_to_decimal(&1))
     |> List.update_at(0, &DateFormat.parse!(&1, "{YY}{M}{D}"))

@@ -28,7 +28,7 @@ defmodule Mt940.Mixfile do
       {:excoveralls, "~> 0.3", only: [:dev, :test]},
       {:earmark,     "~> 0.1", only: :dev},
       {:ex_doc,      "~> 0.7", only: :dev},
-      {:inch_ex,     "~> 0.2", only: :docs},
+      {:inch_ex,     "~> 0.3", only: :docs},
       {:timex,       "~> 0.13.4"}
     ]
   end

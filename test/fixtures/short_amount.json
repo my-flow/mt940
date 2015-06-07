@@ -1,0 +1,15 @@
+[
+  [
+    {
+      "amount":                   "4",
+      "content":                  "0712211220C4,N196NONREF",
+      "date":                     "2007-12-21T00:00:00+0000",
+      "entry_date":               "2007-12-20T00:00:00+0000",
+      "funds_code":               "credit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N196",
+      "transaction_description":  null
+    }
+  ]
+]

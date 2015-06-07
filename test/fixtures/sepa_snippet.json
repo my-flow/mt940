@@ -1,0 +1,447 @@
+[
+  [
+    {
+      "content":                  "T089414086000001",
+      "modifier":                 null,
+      "reference":                "T089414086000001"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "50880050/0194787400888",
+      "bank_code":                "50880050",
+      "account_number":           "0194787400888",
+      "account_currency":         null
+    },
+    {
+      "modifier":                 "C",
+      "content":                  "00004/00001",
+      "number":                   4,
+      "sheet":                    1
+    },
+    {
+      "modifier":                 "F",
+      "content":                  "C070903EUR766656,49",
+      "balance_type":             "start",
+      "sign":                     "credit",
+      "currency":                 "EUR",
+      "amount":                   "766656.49",
+      "date":                     "2007-09-03T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709070904CR50990,05NTRFNONREF//0724710333343453",
+      "funds_code":               "credit",
+      "amount":                   "50990.05",
+      "swift_code":               "NTRF",
+      "reference":                "NONREF",
+      "transaction_description":  "0724710333343453",
+      "date":                     "2007-09-07T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndId TFNR 22 004?21 00001?22
+SVWZ+Verw CTSc-01 BC-PPP TF?23Nr 22 004?30DRESDEFF508?31DE1450880
+0500194785000?32KARL?33        KAUFMANN?70Empfaenger Marta Metzge
+r",
+      "code":                     166,
+      "transaction_description":  "GUTSCHRIFT",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+EndToEndId TFNR 22 004",
+        "00001",
+        "SVWZ+Verw CTSc-01 BC-PPP TF",
+        "Nr 22 004"
+      ],
+      "bank_code":                "DRESDEFF508",
+      "account_number":           "DE14508800500194785000",
+      "account_holder":           ["KARL", "KAUFMANN"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   [
+        [70, "Empfaenger Marta Metzger"]
+      ]
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709070904CR154551,93NTRFNONREF//0724710324647450",
+      "funds_code":               "credit",
+      "amount":                   "154551.93",
+      "swift_code":               "NTRF",
+      "reference":                "NONREF",
+      "transaction_description":  "0724710324647450",
+      "date":                     "2007-09-07T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0300300004?21SVWZ+Strukturier
+ter Verwend?22ungszweck 30030004 DE?30DRESDEFF508?31DE03508800500
+194791600?32Quentin Quast?70Empfaenger bei DRESDE mit 7?710 Zeich
+en Empfaenger bei DR",
+      "code":                     166,
+      "transaction_description":  "GUTSCHRIFT",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 0300300004",
+        "SVWZ+Strukturierter Verwend",
+        "ungszweck 30030004 DE"
+      ],
+      "bank_code":                "DRESDEFF508",
+      "account_number":           "DE03508800500194791600",
+      "account_holder":           ["Quentin Quast"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   [
+        [70, "Empfaenger bei DRESDE mit 7"],
+        [71, "0 Zeichen Empfaenger bei DR"]
+      ]
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709070904CR154551,93NTRFNONREF//0724710324661090",
+      "funds_code":               "credit",
+      "amount":                   "154551.93",
+      "swift_code":               "NTRF",
+      "reference":                "NONREF",
+      "transaction_description":  "0724710324661090",
+      "date":                     "2007-09-07T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0500500004?21SVWZ+Strukturier
+ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
+194785000?32Karl Kaufmann?70Empfaenger bei DRESDE",
+      "code":                     166,
+      "transaction_description":  "GUTSCHRIFT",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 0500500004",
+        "SVWZ+Strukturierter Verwend",
+        "ungszweck 50050004 DE"
+      ],
+      "bank_code":                "DRESDEFF508",
+      "account_number":           "DE14508800500194785000",
+      "account_holder":           ["Karl Kaufmann"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   [
+        [70, "Empfaenger bei DRESDE"]
+      ]
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904DR1500,00NTRFKREF+//536D80EFEC56ACF8",
+      "funds_code":               "debit",
+      "amount":                   "1500.00",
+      "swift_code":               "NTRF",
+      "reference":                "KREF+",
+      "transaction_description":  "536D80EFEC56ACF8",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "191?00SEPA-UEBERW?100399?20KREF+TFNr 01022 MSGID CTSc-?2101 EBB?2
+2MTLG:SEPA-Ueberweisungsauft?23rag Datei mit 0000001 Zahlu?24ngen",
+      "code":                     191,
+      "transaction_description":  "SEPA-UEBERW",
+      "prima_nota":               399,
+      "details":                  [
+        "KREF+TFNr 01022 MSGID CTSc-",
+        "01 EBB",
+        "MTLG:SEPA-Ueberweisungsauft",
+        "rag Datei mit 0000001 Zahlu",
+        "ngen"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 "F",
+      "content":                  "C070904EUR1125250,4",
+      "balance_type":             "start",
+      "sign":                     "credit",
+      "currency":                 "EUR",
+      "amount":                   "1125250.4",
+      "date":                     "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "C070904EUR559614,51",
+      "balance_type":             null,
+      "sign":                     "credit",
+      "currency":                 "EUR",
+      "amount":                   "559614.51",
+      "date":                     "2007-09-04T00:00:00+0000"
+    }
+  ],
+
+  [
+    {
+      "content":                  "T089414096000001",
+      "modifier":                 null,
+      "reference":                "T089414096000001"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "50880050/0194791600888",
+      "bank_code":                "50880050",
+      "account_number":           "0194791600888",
+      "account_currency":         null
+    },
+    {
+      "modifier":                 "C",
+      "content":                  "00004/00001",
+      "number":                   4,
+      "sheet":                    1
+    },
+    {
+      "modifier":                 "F",
+      "content":                  "D070903EUR1970431,87",
+      "balance_type":             "start",
+      "sign":                     "debit",
+      "currency":                 "EUR",
+      "amount":                   "1970431.87",
+      "date":                     "2007-09-03T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904DR0,08NTRFTFNr 40001 MSGID//0724710345316116",
+      "funds_code":               "debit",
+      "amount":                   "0.08",
+      "swift_code":               "NTRF",
+      "reference":                "TFNr 40001 MSGID",
+      "transaction_description":  "0724710345316116",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00005?21MTLG:Grund nicht s
+pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "code":                     159,
+      "transaction_description":  "RETOURE",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 40001 00005",
+        "MTLG:Grund nicht spezifizie",
+        "rt Reject aus SEPA-Ueberwei",
+        "sungsauftrag"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       914,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904CR335,33NTRFTFNr 44001 MSGID//0724710351063401",
+      "funds_code":               "credit",
+      "amount":                   "335.33",
+      "swift_code":               "NTRF",
+      "reference":                "TFNr 44001 MSGID",
+      "transaction_description":  "0724710351063401",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00001?21MTLG:Grund nicht s
+pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "code":                     159,
+      "transaction_description":  "RETOURE",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 44001 00001",
+        "MTLG:Grund nicht spezifizie",
+        "rt Reject aus SEPA-Ueberwei",
+        "sungsauftrag"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       914,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904CR15000,NTRFTFNr 40001 MSGID//0724710345316110",
+      "funds_code":               "credit",
+      "amount":                   "15000",
+      "swift_code":               "NTRF",
+      "reference":                "TFNr 40001 MSGID",
+      "transaction_description":  "0724710345316110",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00002?21MTLG:Grund nicht s
+pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "code":                     159,
+      "transaction_description":  "RETOURE",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 40001 00002",
+        "MTLG:Grund nicht spezifizie",
+        "rt Reject aus SEPA-Ueberwei",
+        "sungsauftrag"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       914,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904CR15000,05NTRFNONREF//0724710290659857",
+      "funds_code":               "credit",
+      "amount":                   "15000.05",
+      "swift_code":               "NTRF",
+      "reference":                "NONREF",
+      "transaction_description":  "0724710290659857",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndIdTFNR20001000?2101?22SVWZ
++TO 13 TFNr 20001 Einga?23ngskanal Mint Unstrukturier?24ter Verwe
+ndungszweck 140 Ze?25ichen Beginn Fuellzeichen x?26xxxxxxxxxxxxxx
+xxxxxxxxxxxxx?27xxxxxxxxxx?30PBNKDEFF100?31DE42100100100043921105
+?32Richter Renate 70 Zeichen B?33eginn Fuellzeichen xxxxxxxx?70Qu
+entin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
+      "code":                     166,
+      "transaction_description":  "GUTSCHRIFT",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+EndToEndIdTFNR20001000",
+        "01",
+        "SVWZ+TO 13 TFNr 20001 Einga",
+        "ngskanal Mint Unstrukturier",
+        "ter Verwendungszweck 140 Ze",
+        "ichen Beginn Fuellzeichen x",
+        "xxxxxxxxxxxxxxxxxxxxxxxxxxx",
+        "xxxxxxxxxx"
+      ],
+      "bank_code":                "PBNKDEFF100",
+      "account_number":           "DE42100100100043921105",
+      "account_holder":           ["Richter Renate 70 Zeichen B", "eginn Fuellzeichen xxxxxxxx"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   [
+        [70, "Quentin Quast 70 Zeichen Be"],
+        [71, "ginn Fuellzeichen xxxxxxxxx"]
+      ]
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904CR125004,88NTRFNONREF//0724710290624796",
+      "funds_code":               "credit",
+      "amount":                   "125004.88",
+      "swift_code":               "NTRF",
+      "reference":                "NONREF",
+      "transaction_description":  "0724710290624796",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "166?00GUTSCHRIFT?100399?20SVWZ+TO13 TF20005 MINT?30PBNKDEFF100?31
+DE42100100100043921105?32Richter Renate 70 Zeichen B?33eginn Fuel
+lzeichen xxxxxxxx?70Quentin Quast 70 Zeichen Be?71ginn Fuellzeich
+en xxxxxxxxx",
+      "code":                     166,
+      "transaction_description":  "GUTSCHRIFT",
+      "prima_nota":               399,
+      "details":                  [
+        "SVWZ+TO13 TF20005 MINT"
+      ],
+      "bank_code":                "PBNKDEFF100",
+      "account_number":           "DE42100100100043921105",
+      "account_holder":           ["Richter Renate 70 Zeichen B", "eginn Fuellzeichen xxxxxxxx"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   [
+        [70, "Quentin Quast 70 Zeichen Be"],
+        [71, "ginn Fuellzeichen xxxxxxxxx"]
+      ]
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904CR915311,55NTRFTFNr 44001 MSGID//R724710351063405",
+      "funds_code":               "credit",
+      "amount":                   "915311.55",
+      "swift_code":               "NTRF",
+      "reference":                "TFNr 44001 MSGID",
+      "transaction_description":  "R724710351063405",
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00002?21MTLG:IBAN unguelti
+g Rueckue?22berweisung aus SEPA-Ueberwe?23isungsauftrag?34901",
+      "code":                     159,
+      "transaction_description":  "RETOURE",
+      "prima_nota":               399,
+      "details":                  [
+        "EREF+TFNR 44001 00002",
+        "MTLG:IBAN ungueltig Rueckue",
+        "berweisung aus SEPA-Ueberwe",
+        "isungsauftrag"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       901,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0709040904DR3572569,03NMSCNONREF",
+      "funds_code":               "debit",
+      "amount":                   "3572569.03",
+      "swift_code":               "NMSC",
+      "reference":                "NONREF",
+      "transaction_description":  null,
+      "date":                     "2007-09-04T00:00:00+0000",
+      "entry_date":               "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "079?00SAMMLER?109800?200904059001",
+      "code":                     79,
+      "transaction_description":  "SAMMLER",
+      "prima_nota":               9800,
+      "details":                  [
+        "0904059001"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 "F",
+      "content":                  "D070904EUR4472049,09",
+      "balance_type":             "start",
+      "sign":                     "debit",
+      "currency":                 "EUR",
+      "amount":                   "4472049.09",
+      "date":                     "2007-09-04T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "D070904EUR4472049,09",
+      "balance_type":             null,
+      "sign":                     "debit",
+      "currency":                 "EUR",
+      "amount":                   "4472049.09",
+      "date":                     "2007-09-04T00:00:00+0000"
+    }
+  ]
+]

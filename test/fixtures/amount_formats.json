@@ -1,0 +1,58 @@
+[
+  [
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR380115,12",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "380115.12",
+      "date":         "2010-03-18T00:00:00+0000"
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR380115,1",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "380115.1",
+      "date":         "2010-03-18T00:00:00+0000"
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR380115,",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "380115",
+      "date":         "2010-03-18T00:00:00+0000"
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR0,12",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "0.12",
+      "date":         "2010-03-18T00:00:00+0000"
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR00,12",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "0.12",
+      "date":         "2010-03-18T00:00:00+0000"
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100318EUR001,12",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "1.12",
+      "date":         "2010-03-18T00:00:00+0000"
+    }
+  ]
+]

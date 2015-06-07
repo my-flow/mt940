@@ -1,0 +1,16 @@
+[
+  [
+    {
+      "content":          "STARTUMS",
+      "modifier":         null,
+      "reference":        "STARTUMS"
+    },
+    {
+      "account_currency": null,
+      "account_number":   "0001581901",
+      "bank_code":        "49999924",
+      "content":          "49999924/0001581901",
+      "modifier":         null
+    }
+  ]
+]

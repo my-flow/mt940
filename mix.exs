@@ -25,10 +25,11 @@ defmodule Mt940.Mixfile do
   defp deps do
     [
       {:decimal,     "~> 1.1.0" },
-      {:excoveralls, "~> 0.3", only: [:dev, :test]},
-      {:earmark,     "~> 0.1", only: :dev},
-      {:ex_doc,      "~> 0.7", only: :dev},
-      {:inch_ex,     "~> 0.3", only: :docs},
+      {:exjsx,       "~> 3.1.0", only: :test},
+      {:excoveralls, "~> 0.3",   only: [:dev, :test]},
+      {:earmark,     "~> 0.1",   only: :dev},
+      {:ex_doc,      "~> 0.7",   only: :dev},
+      {:inch_ex,     "~> 0.3",   only: :docs},
       {:timex,       "~> 0.13.4"}
     ]
   end

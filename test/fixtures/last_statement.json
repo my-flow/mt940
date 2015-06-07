@@ -1,0 +1,13 @@
+[
+  [
+    {
+      "amount":       "160.00",
+      "balance_type": "start",
+      "content":      "D091220EUR000000000160,00",
+      "currency":     "EUR",
+      "date":         "2009-12-20T00:00:00+0000",
+      "modifier":     "F",
+      "sign":         "debit"
+    }
+  ]
+]

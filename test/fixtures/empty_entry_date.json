@@ -1,0 +1,15 @@
+[
+  [
+    {
+      "modifier":                 null,
+      "content":                  "110701CN50,00NZ10NONREF",
+      "funds_code":               "credit",
+      "amount":                   "50.00",
+      "swift_code":               "NZ10",
+      "reference":                "NONREF",
+      "transaction_description":  null,
+      "date":                     "2011-07-01T00:00:00+0000",
+      "entry_date":               null
+    }
+  ]
+]

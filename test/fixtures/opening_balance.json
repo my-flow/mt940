@@ -1,0 +1,13 @@
+[
+  [
+    {
+      "amount":       "40000.00",
+      "balance_type": "start",
+      "content":      "C031002PLN40000,00",
+      "currency":     "PLN",
+      "date":         "2003-10-02T00:00:00+0000",
+      "modifier":     "F",
+      "sign":         "credit"
+    }
+  ]
+]

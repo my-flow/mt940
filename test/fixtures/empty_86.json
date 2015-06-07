@@ -1,0 +1,17 @@
+[
+  [
+    {
+      "modifier":                 null,
+      "content":                  "091",
+      "code":                     91,
+      "details":                  [],
+      "account_holder":           [],
+      "account_number":           null,
+      "bank_code":                null,
+      "not_implemented_fields":   [],
+      "prima_nota":               null,
+      "text_key_extension":       null,
+      "transaction_description":  null
+    }
+  ]
+]

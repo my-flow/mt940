@@ -1,0 +1,21 @@
+[
+  [
+    {
+      "details":
+        [
+          "GEA   NR 001732   19.12.07/18.51",
+          "  POSTBANK NIJMEGEN GWK,PAS555"
+        ],
+      "account_holder":           [],
+      "account_number":           null,
+      "bank_code":                null,
+      "code":                     null,
+      "content":                  "GEA   NR 001732   19.12.07/18.51\n  POSTBANK NIJMEGEN GWK,PAS555",
+      "modifier":                 null,
+      "not_implemented_fields":   [],
+      "prima_nota":               null,
+      "text_key_extension":       null,
+      "transaction_description":  null
+    }
+  ]
+]

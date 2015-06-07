@@ -89,7 +89,7 @@ defmodule MT940.Parser do
   defp parse_message(raw, line_separator) when is_binary(raw) do
     parts = raw
     |> String.strip
-    |> String.split(Regex.compile!("(#{line_separator}?)?:\\d{1,2}\\w?:()"), on: :all_but_first, trim: true)
+    |> String.split(Regex.compile!("(#{line_separator}?)?:\\d{2,2}\\w?:()"), on: :all_but_first, trim: true)
     |> Stream.map(&String.strip/1)
     |> Stream.chunk(2)
     |> Stream.map(fn [k, v] -> [k |> remove_newline!(line_separator), v] end)
@@ -103,7 +103,7 @@ defmodule MT940.Parser do
 
   defp to_keywords(parts, line_separator) do
     parts
-    |> Stream.map(fn [k, v] -> { String.to_atom(k), split(k, v, line_separator) } end)
-    |> Enum.into(Keyword.new)
+    |> Stream.map(fn [k, v] -> split(k, v, line_separator) end)
+    |> Enum.to_list
   end
 end

@@ -1,0 +1,15 @@
+[
+  [
+    {
+      "amount":                   "0.60",
+      "content":                  "091211D000000000000,60N913NONREF",
+      "date":                     "2009-12-11T00:00:00+0000",
+      "entry_date":               null,
+      "funds_code":               "debit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N913",
+      "transaction_description":  null
+    }
+  ]
+]

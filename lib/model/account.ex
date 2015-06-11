@@ -1,5 +1,11 @@
 defmodule MT940.Account do
 
+  @moduledoc ~S"""
+  ## Account Identification
+
+  This field identifies the account for which the statement is sent.
+  """
+
   defstruct [
     :modifier,
     :content,
@@ -7,6 +13,8 @@ defmodule MT940.Account do
     :account_number,
     :account_currency
   ]
+
+  @type t :: %__MODULE__{}
 
   use MT940.Field
 

@@ -41,39 +41,19 @@ end
 
 
 defmodule MT940.AccountHelper do
-  use Timex
+  use MT940
 
   def balance(raw) when is_binary(raw) do
     %{amount: amount, currency: currency} = raw
-    |> MT940.Parser.parse!
+    |> parse!
     |> Enum.at(-1)
-    |> Enum.filter(fn
-      %MT940.ClosingBalance{} -> true
-      _ -> false
-    end)
-    |> Enum.at(0)
-
+    |> MT940.CustomerStatementMessage.closing_balance
     "#{amount} #{currency}"
   end
 
-
   def transactions(raw) when is_binary(raw) do
     raw
-    |> MT940.Parser.parse!
-    |> Stream.flat_map(&Stream.filter(&1, fn 
-      %MT940.StatementLine{} -> true
-      %MT940.StatementLineInformation{} -> true
-      _ -> false
-    end))
-    |> Stream.chunk(2)
-    |> Enum.map(fn [%MT940.StatementLine{value_date: value_date, amount: amount}, %MT940.StatementLineInformation{details: details}] ->
-      %{
-        booking_date: value_date |> DateFormat.format!("{ISO}"),
-        amount:       amount  |> to_string,
-        purpose:      details |> Enum.join
-      }
-    end)
+    |> parse!
+    |> Enum.flat_map(&MT940.CustomerStatementMessage.statement_lines/1)
   end
 end
-
-

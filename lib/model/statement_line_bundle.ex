@@ -13,6 +13,7 @@ defmodule MT940.StatementLineBundle do
     :transaction_description
   ]
 
+  @type t :: %__MODULE__{}
 
   @doc false
   def new(statement_line, statement_line_info) do

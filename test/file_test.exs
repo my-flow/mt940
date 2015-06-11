@@ -1,14 +1,15 @@
 defmodule FileTest do
   use ExUnit.Case
   use Timex
-  import MT940.AccountHelper
 
   test "it should parse fixture files correctly" do
     ""
     |> build_path!
     |> File.ls!
     |> Stream.filter(&Regex.match?(~r/\.sta$/, &1))
-    |> Stream.filter(fn filename -> ~r/sta$/ |> Regex.replace(filename, "json") |> build_path! |> File.exists? end)
+    |> Stream.filter(fn filename ->
+      ~r/sta$/ |> Regex.replace(filename, "json") |> build_path! |> File.exists?
+    end)
     |> Enum.each(&compare!/1)
   end
 
@@ -46,8 +47,8 @@ defmodule FileTest do
     raw = "transactions.sta" |> read!
     messages = raw |> MT940.Parser.parse!
     assert 6 == messages |> Enum.count
-    assert 10 == raw |> transactions |> Enum.count
-    assert "25.69 EUR" == raw |> balance
+    assert 10 == raw |> MT940.AccountHelper.transactions |> Enum.count
+    assert "25.69 EUR" == raw |> MT940.AccountHelper.balance
   end
 
 
@@ -55,7 +56,7 @@ defmodule FileTest do
     raw = "with_binary_character.sta" |> read!
     messages = raw |> MT940.Parser.parse!
     assert 2 == messages |> Enum.count
-    assert 4 == raw |> transactions |> Enum.count
-    assert "131193.19 EUR" == raw |> balance
+    assert 4 == raw |> MT940.AccountHelper.transactions |> Enum.count
+    assert "131193.19 EUR" == raw |> MT940.AccountHelper.balance
   end
 end

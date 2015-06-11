@@ -1,7 +1,6 @@
 defmodule MT940.TagHandler do
   @moduledoc false
 
-  import Helper
   use Timex
 
 

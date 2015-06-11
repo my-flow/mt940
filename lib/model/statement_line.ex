@@ -2,6 +2,10 @@ defmodule MT940.StatementLine do
   import Helper
   use Timex
 
+  @moduledoc ~S"""
+  Statement Line
+  """
+
   defstruct [
     :modifier,
     :content,
@@ -13,6 +17,8 @@ defmodule MT940.StatementLine do
     :reference,
     :transaction_description
   ]
+
+  @type t :: %__MODULE__{}
 
   use MT940.Field
 

@@ -16,6 +16,8 @@ defmodule MT940.Balance do
         :date
       ]
 
+      @type t :: %__MODULE__{}
+
       use MT940.Field
 
       defp parse_content(result = %__MODULE__{modifier: modifier, content: content}, line_separator) do

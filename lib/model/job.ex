@@ -1,10 +1,18 @@
 defmodule MT940.Job do
 
+  @moduledoc ~S"""
+  ## Transaction Reference Number
+
+  Used by the Sender to unambiguously identify the message.
+  """
+
   defstruct [
     :modifier,
     :content,
     :reference
   ]
+
+  @type t :: %__MODULE__{}
 
   use MT940.Field
 

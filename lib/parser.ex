@@ -1,5 +1,4 @@
 defmodule MT940.Parser do
-  import MT940.TagHandler
   import Helper
 
   @moduledoc ~S"""
@@ -13,16 +12,16 @@ defmodule MT940.Parser do
   result (without the `{:ok, result}` tuple) in case of success
   or raises an exception in case it fails. For example:
 
-      use MT940
+      import MT940.Parser
 
       parse(":20:TELEWIZORY S.A.")
-      #=> {:ok, [[":20:": "TELEWIZORY S.A."]]}
+      #=> {:ok, [[%MT940.Job{content: "TELEWIZORY S.A.", modifier: nil, reference: "TELEWIZORY S.A."}]]}
 
       parse("invalid")
       #=> {:error, :badarg}
 
       parse!(":20:TELEWIZORY S.A.")
-      #=> [[":20:": "TELEWIZORY S.A."]]
+      #=> [[%MT940.Job{content: "TELEWIZORY S.A.", modifier: nil, reference: "TELEWIZORY S.A."}]]
 
       parse!("invalid")
       #=> raises ArgumentError
@@ -94,7 +93,7 @@ defmodule MT940.Parser do
     |> Stream.chunk(2)
     |> Stream.map(fn [k, v] -> [k |> remove_newline!(line_separator), v] end)
 
-    case parts |> Enum.all?(fn [k, _] -> ~r/^:\d{1,2}\w?:/ |> Regex.match?(k) end) do
+    case parts |> Enum.all?(fn [k, _] -> ~r/^:\d{2,2}\w?:/ |> Regex.match?(k) end) do
       true  -> to_keywords(parts, line_separator)
       false -> {:error, :badarg}
     end
@@ -103,7 +102,7 @@ defmodule MT940.Parser do
 
   defp to_keywords(parts, line_separator) do
     parts
-    |> Stream.map(fn [k, v] -> split(k, v, line_separator) end)
+    |> Stream.map(fn [k, v] -> MT940.TagHandler.split(k, v, line_separator) end)
     |> Enum.to_list
   end
 end

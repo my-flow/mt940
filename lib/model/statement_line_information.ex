@@ -1,6 +1,13 @@
 defmodule MT940.StatementLineInformation do
   import Helper
 
+  @moduledoc ~S"""
+  ## Information to Account Owner
+
+  Additional information about the transaction detailed in the preceding
+  statement line and which is to be passed on to the account owner.
+  """
+
   defstruct [
     :modifier,
     :content,
@@ -14,6 +21,8 @@ defmodule MT940.StatementLineInformation do
     account_holder: [],
     not_implemented_fields: []
   ]
+
+  @type t :: %__MODULE__{}
 
   use MT940.Field
 

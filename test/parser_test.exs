@@ -1,6 +1,6 @@
 defmodule ParserTest do
   use ExUnit.Case
-  use MT940
+  import MT940.Parser
   use Timex
 
 

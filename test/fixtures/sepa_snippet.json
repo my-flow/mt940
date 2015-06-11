@@ -35,7 +35,7 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710333343453",
-      "date":                     "2007-09-07T00:00:00+0000",
+      "value_date":               "2007-09-07T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -69,7 +69,7 @@ r",
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710324647450",
-      "date":                     "2007-09-07T00:00:00+0000",
+      "value_date":               "2007-09-07T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -103,7 +103,7 @@ en Empfaenger bei DR",
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710324661090",
-      "date":                     "2007-09-07T00:00:00+0000",
+      "value_date":               "2007-09-07T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -135,7 +135,7 @@ ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
       "swift_code":               "NTRF",
       "reference":                "KREF+",
       "transaction_description":  "536D80EFEC56ACF8",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -214,7 +214,7 @@ ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
       "swift_code":               "NTRF",
       "reference":                "TFNr 40001 MSGID",
       "transaction_description":  "0724710345316116",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -244,7 +244,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "swift_code":               "NTRF",
       "reference":                "TFNr 44001 MSGID",
       "transaction_description":  "0724710351063401",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -274,7 +274,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "swift_code":               "NTRF",
       "reference":                "TFNr 40001 MSGID",
       "transaction_description":  "0724710345316110",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -304,7 +304,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710290659857",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -345,7 +345,7 @@ entin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710290624796",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -377,7 +377,7 @@ en xxxxxxxxx",
       "swift_code":               "NTRF",
       "reference":                "TFNr 44001 MSGID",
       "transaction_description":  "R724710351063405",
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {
@@ -407,7 +407,7 @@ g Rueckue?22berweisung aus SEPA-Ueberwe?23isungsauftrag?34901",
       "swift_code":               "NMSC",
       "reference":                "NONREF",
       "transaction_description":  null,
-      "date":                     "2007-09-04T00:00:00+0000",
+      "value_date":               "2007-09-04T00:00:00+0000",
       "entry_date":               "2007-09-04T00:00:00+0000"
     },
     {

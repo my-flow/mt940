@@ -37,6 +37,8 @@ defmodule MT940.Account do
         }
       [account_number] -> 
         %__MODULE__{result | account_number: account_number}
+      _ ->
+        result
     end    
   end
 end

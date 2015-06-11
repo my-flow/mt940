@@ -1,6 +1,5 @@
 defmodule FileTest do
   use ExUnit.Case
-  use MT940
   use Timex
   import MT940.AccountHelper
 
@@ -17,7 +16,7 @@ defmodule FileTest do
   defp compare!(filename) when is_binary(filename) do
     binary = filename
     |> read!
-    |> parse!
+    |> MT940.Parser.parse!
     |> JSX.encode!
 
     json = ~r/sta$/
@@ -45,7 +44,7 @@ defmodule FileTest do
 
   test "read primae notae sets from file" do
     raw = "transactions.sta" |> read!
-    messages = raw |> parse!
+    messages = raw |> MT940.Parser.parse!
     assert 6 == messages |> Enum.count
     assert 10 == raw |> transactions |> Enum.count
     assert "25.69 EUR" == raw |> balance
@@ -54,7 +53,7 @@ defmodule FileTest do
 
   test "with binary character" do
     raw = "with_binary_character.sta" |> read!
-    messages = raw |> parse!
+    messages = raw |> MT940.Parser.parse!
     assert 2 == messages |> Enum.count
     assert 4 == raw |> transactions |> Enum.count
     assert "131193.19 EUR" == raw |> balance

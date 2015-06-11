@@ -13,6 +13,13 @@ defimpl JSX.Encoder, for: [MT940.StatementLine, MT940.AccountBalance, MT940.Clos
     end
 
     d = case d do
+      %{value_date: value_date} when value_date != nil ->
+        %{d | value_date: value_date |> DateFormat.format!("{ISO}")}
+      _ ->
+        d
+    end
+
+    d = case d do
       %{entry_date: entry_date} when entry_date != nil ->
         %{d | entry_date: entry_date |> DateFormat.format!("{ISO}")}
       _ ->
@@ -34,12 +41,11 @@ end
 
 
 defmodule MT940.AccountHelper do
-  use MT940
   use Timex
 
   def balance(raw) when is_binary(raw) do
     %{amount: amount, currency: currency} = raw
-    |> parse!
+    |> MT940.Parser.parse!
     |> Enum.at(-1)
     |> Enum.filter(fn
       %MT940.ClosingBalance{} -> true
@@ -53,16 +59,16 @@ defmodule MT940.AccountHelper do
 
   def transactions(raw) when is_binary(raw) do
     raw
-    |> parse!
+    |> MT940.Parser.parse!
     |> Stream.flat_map(&Stream.filter(&1, fn 
       %MT940.StatementLine{} -> true
       %MT940.StatementLineInformation{} -> true
       _ -> false
     end))
     |> Stream.chunk(2)
-    |> Enum.map(fn [%MT940.StatementLine{date: date, amount: amount}, %MT940.StatementLineInformation{details: details}] ->
+    |> Enum.map(fn [%MT940.StatementLine{value_date: value_date, amount: amount}, %MT940.StatementLineInformation{details: details}] ->
       %{
-        booking_date: date    |> DateFormat.format!("{ISO}"),
+        booking_date: value_date |> DateFormat.format!("{ISO}"),
         amount:       amount  |> to_string,
         purpose:      details |> Enum.join
       }

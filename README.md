@@ -22,7 +22,7 @@ deps: [{:mt940, "~> 0.2.0"}, …]
 `use MT940` and `parse!` the raw input:
 
 ```elixir
-defmodule MT940.Account do
+defmodule BankAccount do
   use MT940
 
   def balance(raw) when is_binary(raw) do
@@ -41,7 +41,7 @@ defmodule MT940.Account do
 end
 ```
 
-If you want to have more detailed, low-level list of MT940 commands, use the
+If you want to have a more detailed, low-level list of MT940 commands, use the
 `MT940.Parser.parse!` command.
 
 

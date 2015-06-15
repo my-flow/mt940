@@ -12,6 +12,9 @@ defmodule MT940.CustomerStatementMessage do
     statement_lines: [],
     closing_balance: nil
 
+  @typep message :: record(:message, account: MT940.Account, statement_lines: list, closing_balance: MT940.ClosingBalance)
+
+  @spec parse_file!(binary) :: list
   def parse_file!(filename) when is_binary(filename) do
     filename
     |> File.read!
@@ -19,6 +22,7 @@ defmodule MT940.CustomerStatementMessage do
   end
 
 
+  @spec parse!(binary) :: list
   def parse!(data) when is_binary(data) do
     data
     |> MT940.Parser.parse!
@@ -60,21 +64,25 @@ defmodule MT940.CustomerStatementMessage do
   end
 
 
+  @spec bank_code(message) :: binary
   def bank_code(message) when Record.is_record(message) do
     message(message, :account).bank_code
   end
 
 
+  @spec account_number(message) :: binary
   def account_number(message) when Record.is_record(message) do
     message(message, :account).account_number
   end
 
 
+  @spec statement_lines(message) :: list
   def statement_lines(message) when Record.is_record(message) do
     message(message, :statement_lines)
   end
 
 
+  @spec closing_balance(message) :: MT940.ClosingBalance
   def closing_balance(message) when Record.is_record(message) do
     message(message, :closing_balance)
   end

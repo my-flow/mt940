@@ -1,0 +1,195 @@
+[
+  [
+    {
+      "content":          "STARTUMS",
+      "modifier":         null,
+      "reference":        "STARTUMS"
+    },
+    {
+      "account_currency": null,
+      "account_number":   "888888",
+      "bank_code":        "99999999",
+      "content":          "99999999/888888",
+      "modifier":         null
+    },
+    {
+      "content":  "6/1",
+      "modifier": "C",
+      "number":   6,
+      "sheet":    1
+    },
+    {
+      "modifier":     "F",
+      "content":      "C100716EUR1931,42",
+      "balance_type": "start",
+      "sign":         "credit",
+      "currency":     "EUR",
+      "amount":       "1931.42",
+      "date":         "2010-07-16T00:00:00+0000"
+    },
+    {
+      "amount":                   "5.9",
+      "content":                  "1008010802DR5,9N024NONREF",
+      "value_date":               "2010-08-01T00:00:00+0000",
+      "entry_date":               "2010-08-02T00:00:00+0000",
+      "funds_code":               "debit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N024",
+      "transaction_description":  null
+    },
+    {
+      "modifier":                 null,
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20ABRECHNUNG 30.07.2010?21INFOR
+MATION ZUR ABRECHNUNG?22KONTOSTAND AM 30.07.2010?23          9999
+9,99 +?24ABRECHNUNGSZEITRAUM VOM 01.?2507.2010 BIS 30.07.2010?26E
+NTGELTE BIS 30.07.2010?27               9,99S?28GRUNDGEBUEHR?29 1
+ X    9,99?60 9,99S?61BAR ODER GELDAUTOMAT?62 2 X    0,40?63 0,80
+S",
+      "code":                     809,
+      "transaction_description":  "ENTGELTABSCHLUSS",
+      "prima_nota":               6666,
+      "details":                  [
+        "ABRECHNUNG 30.07.2010",
+        "INFORMATION ZUR ABRECHNUNG",
+        "KONTOSTAND AM 30.07.2010",
+        "99999,99 +",
+        "ABRECHNUNGSZEITRAUM VOM 01.",
+        "07.2010 BIS 30.07.2010",
+        "ENTGELTE BIS 30.07.2010",
+        "9,99S",
+        "GRUNDGEBUEHR",
+        "1 X    9,99",
+        "9,99S",
+        "BAR ODER GELDAUTOMAT",
+        "2 X    0,40",
+        "0,80S"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":                   "0.0",
+      "content":                  "1008010802CR0,0N024NONREF",
+      "value_date":               "2010-08-01T00:00:00+0000",
+      "entry_date":               "2010-08-02T00:00:00+0000",
+      "funds_code":               "credit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N024",
+      "transaction_description":  null
+    },
+    {
+      "modifier":                 null,
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20HOMEBANKING?21 GESCHAEFTSVORF
+AELLE?22 2 X    0,10?23 0,20S?24SCHECKS/LASTSCHRIFTEN?25 GESCHAEF
+TSVORFAELLE?26 1 X    0,40?27 0,40S?28RECHNUNGSABSCHLUSS?29 1 X  
+  0,00?60BEREITSTELLUNG ELKO?61 GESCHAEFTSVORFAELLE?62 5 X    0,0
+3?63 0,15S",
+      "code":                     809,
+      "transaction_description":  "ENTGELTABSCHLUSS",
+      "prima_nota":               6666,
+      "details":                  [
+        "HOMEBANKING",
+        "GESCHAEFTSVORFAELLE",
+        "2 X    0,10",
+        "0,20S",
+        "SCHECKS/LASTSCHRIFTEN",
+        "GESCHAEFTSVORFAELLE",
+        "1 X    0,40",
+        "0,40S",
+        "RECHNUNGSABSCHLUSS",
+        "1 X    0,00",
+        "BEREITSTELLUNG ELKO",
+        "GESCHAEFTSVORFAELLE",
+		"5 X    0,03",
+		"0,15S"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":                   "0.0",
+      "content":                  "1008010802CR0,0N024NONREF",
+      "value_date":               "2010-08-01T00:00:00+0000",
+      "entry_date":               "2010-08-02T00:00:00+0000",
+      "funds_code":               "credit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N024",
+      "transaction_description":  null
+    },
+    {
+      "modifier":                 null,
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20KONTOAUSZUEGE?21 1 X    0,30?
+22 0,30S?23PORTO?24 1 X    0,55?25 0,55S?26ABRECHNUNG 30.07.2010?
+27               9,99S?28KONTOSTAND/RECHNUNGSABSCHLU?29SS?60     
+     9.999,99 +?61AM 30.07.2010",
+      "code":                     809,
+      "transaction_description":  "ENTGELTABSCHLUSS",
+      "prima_nota":               6666,
+      "details":                  [
+        "KONTOAUSZUEGE",
+        "1 X    0,30",
+        "0,30S",
+        "PORTO",
+        "1 X    0,55",
+        "0,55S",
+        "ABRECHNUNG 30.07.2010",
+        "9,99S",
+        "KONTOSTAND/RECHNUNGSABSCHLU",
+        "SS",
+        "9.999,99 +",
+        "AM 30.07.2010"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":                   "0.0",
+      "content":                  "1008010802CR0,0N024NONREF",
+      "value_date":               "2010-08-01T00:00:00+0000",
+      "entry_date":               "2010-08-02T00:00:00+0000",
+      "funds_code":               "credit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "N024",
+      "transaction_description":  null
+    },
+    {
+      "modifier":                 null,
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20RECHNUNGSNUMMER: 2010-07-31?2
+1-02.07.28.302475",
+      "code":                     809,
+      "transaction_description":  "ENTGELTABSCHLUSS",
+      "prima_nota":               6666,
+      "details":                  [
+        "RECHNUNGSNUMMER: 2010-07-31",
+        "-02.07.28.302475"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":       "1925.52",
+      "balance_type": "start",
+      "content":      "C100802EUR1925,52",
+      "currency":     "EUR",
+      "date":         "2010-08-02T00:00:00+0000",
+      "modifier":     "F",
+      "sign":         "credit"
+    }
+  ]
+]

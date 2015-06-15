@@ -83,33 +83,23 @@ defmodule CustomerStatementMessageTest do
   end
 
 
-  test "parsing a file with missing 86 should raise an exception" do
-    f = fn ->
-      [File.cwd!, "test", "fixtures", "sepa_snippet_broken.sta"]
-      |> Path.join
-      |> parse_file!
-    end
-    assert_raise(UnexpectedStructureError, f)
-  end
+  test "parsing a file with broken structure should raise an exception" do
+    filenames = [
+      "sepa_snippet_broken.sta",
+      "sepa_snippet_broken_2.sta",
+      "sepa_snippet_broken_3.sta",
+      "sepa_snippet_broken_4.sta"
+    ]
 
-
-  test "parsing a file with missing 61 should raise an exception" do
-    f = fn ->
-      [File.cwd!, "test", "fixtures", "sepa_snippet_broken_2.sta"]
-      |> Path.join
-      |> parse_file!
-    end
-    assert_raise(UnexpectedStructureError, f)
-  end
-
-
-  test "parsing a file without matching 86 should raise an exception" do
-    f = fn ->
-      [File.cwd!, "test", "fixtures", "sepa_snippet_broken_3.sta"]
-      |> Path.join
-      |> parse_file!
-    end
-    assert_raise(UnexpectedStructureError, f)
+    filenames
+    |> Enum.map(fn filename ->
+      fn ->
+        [File.cwd!, "test", "fixtures", filename]
+        |> Path.join
+        |> parse_file!
+      end
+    end)
+    |> Enum.each(&assert_raise(UnexpectedStructureError, &1))
   end
 
 

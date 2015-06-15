@@ -16,7 +16,7 @@ end-of-day statement file which details all entries booked to a bank account.
 Include a dependency in your `mix.exs`:
 
 ```elixir
-deps: [{:mt940, "~> 0.2.0"}, …]
+deps: [{:mt940, "~> 0.3.0"}, …]
 ```
 
 `use MT940` and `parse!` the raw input:

@@ -1,0 +1,82 @@
+[
+  [
+    {
+      "content":          "MT940-1107120120",
+      "modifier":         null,
+      "reference":        "MT940-1107120120"
+    },
+    {
+      "content":   "NONREF",
+      "modifier":  null,
+      "reference": "NONREF"
+    },
+    {
+      "account_currency": "EUR",
+      "account_number":   "120119000",
+      "bank_code":        "20011111",
+      "content":          "20011111/120119000EUR",
+      "modifier":         null
+    },
+    {
+      "content":  "0/32",
+      "modifier": "C",
+      "number":   0,
+      "sheet":    32
+    },
+    {
+      "amount":       "123.58",
+      "balance_type": "intermediate",
+      "content":      "C110202EUR123,58",
+      "currency":     "EUR",
+      "date":         "2011-02-02T00:00:00+0000",
+      "modifier":     "M",
+      "sign":         "credit"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "1102020202DR437,69NMSCNONREF//POS 2908012830",
+      "funds_code":               "debit",
+      "amount":                   "437.69",
+      "swift_code":               "NMSC",
+      "reference":                "NONREF",
+      "transaction_description":  "POS 2908012830",
+      "value_date":               "2011-02-02T00:00:00+0000",
+      "entry_date":               "2011-02-02T00:00:00+0000"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "005?20LASTSCHRIFT/BELAST.?2104 42 26461822?22END-TO-END-REF.:?231
+6461823.117162119?24CORE / MANDATSREF.:?25MA6105423J8?26GL�UBIGER
+-ID:?27DE21ZTZ00000021333?28Ref. JK215028I1618108/19954?32MALLESC
+HE RV AG",
+      "code":                     5,
+      "transaction_description":  null,
+      "prima_nota":               null,
+      "details":                  [
+        "LASTSCHRIFT/BELAST.",
+        "04 42 26461822",
+        "END-TO-END-REF.:",
+        "16461823.117162119",
+        "CORE / MANDATSREF.:",
+        "MA6105423J8",
+        "GL�UBIGER-ID:",
+        "DE21ZTZ00000021333",
+        "Ref. JK215028I1618108/19954"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           ["MALLESCHE RV AG"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":       "39.09",
+      "balance_type": "start",
+      "content":      "D110202EUR39,09",
+      "currency":     "EUR",
+      "date":         "2011-02-02T00:00:00+0000",
+      "modifier":     "F",
+      "sign":         "debit"
+    }
+  ]
+]

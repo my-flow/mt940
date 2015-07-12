@@ -71,7 +71,7 @@ defmodule MT940.Parser do
 
     messages = raw
     |> String.strip
-    |> String.split(Regex.compile!("#{line_separator}-#{line_separator}?"), trim: true)
+    |> String.split(Regex.compile!("#{line_separator}-(#{line_separator}|$)"), trim: true)
     |> Stream.map(&parse_message(&1, line_separator))
 
     case messages |> Enum.filter(fn m -> case m do

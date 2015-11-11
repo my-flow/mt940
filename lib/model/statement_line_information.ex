@@ -1,6 +1,4 @@
 defmodule MT940.StatementLineInformation do
-  import Helper
-
   @moduledoc ~S"""
   ## Information to Account Owner
 
@@ -26,7 +24,7 @@ defmodule MT940.StatementLineInformation do
 
   use MT940.Field
 
-  defp parse_content(result = %__MODULE__{content: content}, line_separator) do
+  defp parse_content(result = %__MODULE__{content: content}) do
     s = ~r/\A(\d{3})((.).*)?\z/s |> Regex.run(content, capture: :all_but_first)
 
     result = case s do
@@ -37,13 +35,13 @@ defmodule MT940.StatementLineInformation do
     case s do
       [_, text, separator] -> 
         Regex.compile!("#{Regex.escape(separator)}(\\d{2})([^#{Regex.escape(separator)}]*)")
-        |> Regex.scan(text |> remove_newline!(line_separator), capture: :all_but_first)
+        |> Regex.scan(text, capture: :all_but_first)
         |> Enum.map(fn [code, content] -> [code |> String.to_integer, content |> String.strip] end)
         |> Enum.reduce(result, &assign_sub_fields/2)
       [_] ->
         result
       _ ->
-        %__MODULE__{result | details: Regex.compile!("#{line_separator}") |> Regex.split(content)}
+        %__MODULE__{result | details: [content]}
     end
   end
 

@@ -1,6 +1,4 @@
 defmodule MT940.Statement do
-  import Helper
-
   @moduledoc ~S"""
   ## Statement Number / Sequence Number
 
@@ -20,9 +18,9 @@ defmodule MT940.Statement do
 
   use MT940.Field
 
-  defp parse_content(result = %__MODULE__{content: content}, line_separator) do
+  defp parse_content(result = %__MODULE__{content: content}) do
     matches = ~r/^(\d+)\/?(\d+)?$/
-    |> Regex.run(content |> remove_newline!(line_separator), capture: :all_but_first)
+    |> Regex.run(content, capture: :all_but_first)
     |> Enum.map(&String.to_integer/1)
 
     case matches do

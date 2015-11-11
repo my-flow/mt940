@@ -1,0 +1,77 @@
+[
+  [
+    {
+      "content":          "MT940-1511111253",
+      "modifier":         null,
+      "reference":        "MT940-1511111253"
+    },
+    {
+      "content":          "NONREF",
+      "modifier":         null,
+      "reference":        "NONREF"
+    },
+    {
+      "account_currency": "EUR",
+      "account_number":   "877321000",
+      "bank_code":        "20041111",
+      "content":          "20041111/877321000EUR",
+      "modifier":         null
+    },
+    {
+      "content":          "0/3",
+      "modifier":         "C",
+      "number":           0,
+      "sheet":            3
+    },
+    {
+      "modifier":         "M",
+      "content":          "C151109EUR200,00",
+      "balance_type":     "intermediate",
+      "sign":             "credit",
+      "currency":         "EUR",
+      "amount":           "200.00",
+      "date":             "2015-11-09T00:00:00+0000"
+    },
+    {
+      "amount":                   "10.40",
+      "content":                  "1511091109DR10,40NMSCNONREF//POS 2775118254",
+      "value_date":               "2015-11-09T00:00:00+0000",
+      "entry_date":               "2015-11-09T00:00:00+0000",
+      "funds_code":               "debit",
+      "modifier":                 null,
+      "reference":                "NONREF",
+      "swift_code":               "NMSC",
+      "transaction_description":  "POS 2775118254"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "005?20LASTSCHRIFT/BELAST.?21KARTENZAHLUNG?22PENNY MUENCHEN RAMERS//MUEN?23CHEN RAM?242015-11-07T13:51:13 KFN 0  ?25VJ 1912?26Ref. 38A15313A4223786/1642?32PENNY SAGT DANKE. 66300140",
+      "code":                     5,
+      "transaction_description":  null,
+      "prima_nota":               null,
+      "details":                  [
+        "LASTSCHRIFT/BELAST.",
+        "KARTENZAHLUNG",
+        "PENNY MUENCHEN RAMERS//MUEN",
+        "CHEN RAM",
+        "2015-11-07T13:51:13 KFN 0",
+        "VJ 1912",
+        "Ref. 38A15313A4223786/1642"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           ["PENNY SAGT DANKE. 66300140"],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "amount":       "189.60",
+      "balance_type": "intermediate",
+      "content":      "C151110EUR189,60",
+      "currency":     "EUR",
+      "date":         "2015-11-10T00:00:00+0000",
+      "modifier":     "M",
+      "sign":         "credit"
+    }
+  ]
+]

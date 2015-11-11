@@ -40,10 +40,7 @@
     },
     {
       "modifier":                 null,
-      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndId TFNR 22 004?21 00001?22
-SVWZ+Verw CTSc-01 BC-PPP TF?23Nr 22 004?30DRESDEFF508?31DE1450880
-0500194785000?32KARL?33        KAUFMANN?70Empfaenger Marta Metzge
-r",
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndId TFNR 22 004?21 00001?22SVWZ+Verw CTSc-01 BC-PPP TF?23Nr 22 004?30DRESDEFF508?31DE14508800500194785000?32KARL?33        KAUFMANN?70Empfaenger Marta Metzger",
       "code":                     166,
       "transaction_description":  "GUTSCHRIFT",
       "prima_nota":               399,
@@ -74,10 +71,7 @@ r",
     },
     {
       "modifier":                 null,
-      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0300300004?21SVWZ+Strukturier
-ter Verwend?22ungszweck 30030004 DE?30DRESDEFF508?31DE03508800500
-194791600?32Quentin Quast?70Empfaenger bei DRESDE mit 7?710 Zeich
-en Empfaenger bei DR",
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0300300004?21SVWZ+Strukturierter Verwend?22ungszweck 30030004 DE?30DRESDEFF508?31DE03508800500194791600?32Quentin Quast?70Empfaenger bei DRESDE mit 7?710 Zeichen Empfaenger bei DR",
       "code":                     166,
       "transaction_description":  "GUTSCHRIFT",
       "prima_nota":               399,
@@ -108,9 +102,7 @@ en Empfaenger bei DR",
     },
     {
       "modifier":                 null,
-      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0500500004?21SVWZ+Strukturier
-ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
-194785000?32Karl Kaufmann?70Empfaenger bei DRESDE",
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+TFNR 0500500004?21SVWZ+Strukturierter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500194785000?32Karl Kaufmann?70Empfaenger bei DRESDE",
       "code":                     166,
       "transaction_description":  "GUTSCHRIFT",
       "prima_nota":               399,
@@ -140,8 +132,7 @@ ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
     },
     {
       "modifier":                 null,
-      "content":                  "191?00SEPA-UEBERW?100399?20KREF+TFNr 01022 MSGID CTSc-?2101 EBB?2
-2MTLG:SEPA-Ueberweisungsauft?23rag Datei mit 0000001 Zahlu?24ngen",
+      "content":                  "191?00SEPA-UEBERW?100399?20KREF+TFNr 01022 MSGID CTSc-?2101 EBB?22MTLG:SEPA-Ueberweisungsauft?23rag Datei mit 0000001 Zahlu?24ngen",
       "code":                     191,
       "transaction_description":  "SEPA-UEBERW",
       "prima_nota":               399,
@@ -219,8 +210,7 @@ ter Verwend?22ungszweck 50050004 DE?30DRESDEFF508?31DE14508800500
     },
     {
       "modifier":                 null,
-      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00005?21MTLG:Grund nicht s
-pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00005?21MTLG:Grund nicht spezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "code":                     159,
       "transaction_description":  "RETOURE",
       "prima_nota":               399,
@@ -249,8 +239,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
     },
     {
       "modifier":                 null,
-      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00001?21MTLG:Grund nicht s
-pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00001?21MTLG:Grund nicht spezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "code":                     159,
       "transaction_description":  "RETOURE",
       "prima_nota":               399,
@@ -279,8 +268,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
     },
     {
       "modifier":                 null,
-      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00002?21MTLG:Grund nicht s
-pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 40001 00002?21MTLG:Grund nicht spezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
       "code":                     159,
       "transaction_description":  "RETOURE",
       "prima_nota":               399,
@@ -309,12 +297,7 @@ pezifizie?22rt Reject aus SEPA-Ueberwei?23sungsauftrag?34914",
     },
     {
       "modifier":                 null,
-      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndIdTFNR20001000?2101?22SVWZ
-+TO 13 TFNr 20001 Einga?23ngskanal Mint Unstrukturier?24ter Verwe
-ndungszweck 140 Ze?25ichen Beginn Fuellzeichen x?26xxxxxxxxxxxxxx
-xxxxxxxxxxxxx?27xxxxxxxxxx?30PBNKDEFF100?31DE42100100100043921105
-?32Richter Renate 70 Zeichen B?33eginn Fuellzeichen xxxxxxxx?70Qu
-entin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
+      "content":                  "166?00GUTSCHRIFT?100399?20EREF+EndToEndIdTFNR20001000?2101?22SVWZ+TO 13 TFNr 20001 Einga?23ngskanal Mint Unstrukturier?24ter Verwendungszweck 140 Ze?25ichen Beginn Fuellzeichen x?26xxxxxxxxxxxxxxxxxxxxxxxxxxx?27xxxxxxxxxx?30PBNKDEFF100?31DE42100100100043921105?32Richter Renate 70 Zeichen B?33eginn Fuellzeichen xxxxxxxx?70Quentin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
       "code":                     166,
       "transaction_description":  "GUTSCHRIFT",
       "prima_nota":               399,
@@ -350,10 +333,7 @@ entin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
     },
     {
       "modifier":                 null,
-      "content":                  "166?00GUTSCHRIFT?100399?20SVWZ+TO13 TF20005 MINT?30PBNKDEFF100?31
-DE42100100100043921105?32Richter Renate 70 Zeichen B?33eginn Fuel
-lzeichen xxxxxxxx?70Quentin Quast 70 Zeichen Be?71ginn Fuellzeich
-en xxxxxxxxx",
+      "content":                  "166?00GUTSCHRIFT?100399?20SVWZ+TO13 TF20005 MINT?30PBNKDEFF100?31DE42100100100043921105?32Richter Renate 70 Zeichen B?33eginn Fuellzeichen xxxxxxxx?70Quentin Quast 70 Zeichen Be?71ginn Fuellzeichen xxxxxxxxx",
       "code":                     166,
       "transaction_description":  "GUTSCHRIFT",
       "prima_nota":               399,
@@ -382,8 +362,7 @@ en xxxxxxxxx",
     },
     {
       "modifier":                 null,
-      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00002?21MTLG:IBAN unguelti
-g Rueckue?22berweisung aus SEPA-Ueberwe?23isungsauftrag?34901",
+      "content":                  "159?00RETOURE?100399?20EREF+TFNR 44001 00002?21MTLG:IBAN ungueltig Rueckue?22berweisung aus SEPA-Ueberwe?23isungsauftrag?34901",
       "code":                     159,
       "transaction_description":  "RETOURE",
       "prima_nota":               399,

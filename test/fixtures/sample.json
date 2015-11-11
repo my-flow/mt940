@@ -13,19 +13,19 @@
       "modifier":         null
     },
     {
-      "content":  "6/1",
-      "modifier": "C",
-      "number":   6,
-      "sheet":    1
+      "content":          "6/1",
+      "modifier":         "C",
+      "number":           6,
+      "sheet":            1
     },
     {
-      "modifier":     "F",
-      "content":      "C100716EUR1931,42",
-      "balance_type": "start",
-      "sign":         "credit",
-      "currency":     "EUR",
-      "amount":       "1931.42",
-      "date":         "2010-07-16T00:00:00+0000"
+      "modifier":         "F",
+      "content":          "C100716EUR1931,42",
+      "balance_type":     "start",
+      "sign":             "credit",
+      "currency":         "EUR",
+      "amount":           "1931.42",
+      "date":             "2010-07-16T00:00:00+0000"
     },
     {
       "amount":                   "5.9",
@@ -40,12 +40,7 @@
     },
     {
       "modifier":                 null,
-      "content":                  "809?00ENTGELTABSCHLUSS?106666?20ABRECHNUNG 30.07.2010?21INFOR
-MATION ZUR ABRECHNUNG?22KONTOSTAND AM 30.07.2010?23          9999
-9,99 +?24ABRECHNUNGSZEITRAUM VOM 01.?2507.2010 BIS 30.07.2010?26E
-NTGELTE BIS 30.07.2010?27               9,99S?28GRUNDGEBUEHR?29 1
- X    9,99?60 9,99S?61BAR ODER GELDAUTOMAT?62 2 X    0,40?63 0,80
-S",
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20ABRECHNUNG 30.07.2010?21INFORMATION ZUR ABRECHNUNG?22KONTOSTAND AM 30.07.2010?23          99999,99 +?24ABRECHNUNGSZEITRAUM VOM 01.?2507.2010 BIS 30.07.2010?26ENTGELTE BIS 30.07.2010?27               9,99S?28GRUNDGEBUEHR?29 1 X    9,99?60 9,99S?61BAR ODER GELDAUTOMAT?62 2 X    0,40?63 0,80S",
       "code":                     809,
       "transaction_description":  "ENTGELTABSCHLUSS",
       "prima_nota":               6666,
@@ -84,11 +79,7 @@ S",
     },
     {
       "modifier":                 null,
-      "content":                  "809?00ENTGELTABSCHLUSS?106666?20HOMEBANKING?21 GESCHAEFTSVORF
-AELLE?22 2 X    0,10?23 0,20S?24SCHECKS/LASTSCHRIFTEN?25 GESCHAEF
-TSVORFAELLE?26 1 X    0,40?27 0,40S?28RECHNUNGSABSCHLUSS?29 1 X  
-  0,00?60BEREITSTELLUNG ELKO?61 GESCHAEFTSVORFAELLE?62 5 X    0,0
-3?63 0,15S",
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20HOMEBANKING?21 GESCHAEFTSVORFAELLE?22 2 X    0,10?23 0,20S?24SCHECKS/LASTSCHRIFTEN?25 GESCHAEFTSVORFAELLE?26 1 X    0,40?27 0,40S?28RECHNUNGSABSCHLUSS?29 1 X    0,00?60BEREITSTELLUNG ELKO?61 GESCHAEFTSVORFAELLE?62 5 X    0,03?63 0,15S",
       "code":                     809,
       "transaction_description":  "ENTGELTABSCHLUSS",
       "prima_nota":               6666,
@@ -127,10 +118,7 @@ TSVORFAELLE?26 1 X    0,40?27 0,40S?28RECHNUNGSABSCHLUSS?29 1 X
     },
     {
       "modifier":                 null,
-      "content":                  "809?00ENTGELTABSCHLUSS?106666?20KONTOAUSZUEGE?21 1 X    0,30?
-22 0,30S?23PORTO?24 1 X    0,55?25 0,55S?26ABRECHNUNG 30.07.2010?
-27               9,99S?28KONTOSTAND/RECHNUNGSABSCHLU?29SS?60     
-     9.999,99 +?61AM 30.07.2010",
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20KONTOAUSZUEGE?21 1 X    0,30?22 0,30S?23PORTO?24 1 X    0,55?25 0,55S?26ABRECHNUNG 30.07.2010?27               9,99S?28KONTOSTAND/RECHNUNGSABSCHLU?29SS?60          9.999,99 +?61AM 30.07.2010",
       "code":                     809,
       "transaction_description":  "ENTGELTABSCHLUSS",
       "prima_nota":               6666,
@@ -167,8 +155,7 @@ TSVORFAELLE?26 1 X    0,40?27 0,40S?28RECHNUNGSABSCHLUSS?29 1 X
     },
     {
       "modifier":                 null,
-      "content":                  "809?00ENTGELTABSCHLUSS?106666?20RECHNUNGSNUMMER: 2010-07-31?2
-1-02.07.28.302475",
+      "content":                  "809?00ENTGELTABSCHLUSS?106666?20RECHNUNGSNUMMER: 2010-07-31?21-02.07.28.302475",
       "code":                     809,
       "transaction_description":  "ENTGELTABSCHLUSS",
       "prima_nota":               6666,

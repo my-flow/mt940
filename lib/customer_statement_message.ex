@@ -1,11 +1,11 @@
 defmodule MT940.CustomerStatementMessage do
-  require Record
-
   @moduledoc ~S"""
 
   This is a beautification wrapper around the low-level `MT940.Parser.parse!`
   command. Use it in order to make dealing with data easier.
   """
+
+  require Record
 
   Record.defrecordp :message, __MODULE__,
     account: nil,

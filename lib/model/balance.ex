@@ -20,7 +20,7 @@ defmodule MT940.Balance do
 
       use MT940.Field
 
-      defp parse_content(result = %__MODULE__{modifier: modifier, content: content}, line_separator) do
+      defp parse_content(result = %__MODULE__{modifier: modifier, content: content}) do
         balance_type = case modifier do
           "F" -> :start
           "M" -> :intermediate
@@ -28,7 +28,7 @@ defmodule MT940.Balance do
         end
 
         [sign, date, currency, amount] = ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15})$/
-        |> Regex.run(content |> remove_newline!(line_separator), capture: :all_but_first)
+        |> Regex.run(content, capture: :all_but_first)
         |> List.update_at(1, &DateFormat.parse!(&1, "{YY}{M}{D}"))
         |> List.update_at(3, &convert_to_decimal(&1))
 

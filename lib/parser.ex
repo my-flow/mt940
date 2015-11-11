@@ -1,6 +1,4 @@
 defmodule MT940.Parser do
-  import Helper
-
   @moduledoc ~S"""
   This module contains functions to parse SWIFT's MT940 messages.
 
@@ -72,7 +70,7 @@ defmodule MT940.Parser do
     messages = raw
     |> String.strip
     |> String.split(Regex.compile!("#{line_separator}-(#{line_separator}|$)"), trim: true)
-    |> Stream.map(&parse_message(&1, line_separator))
+    |> Enum.map(&parse_message(&1, line_separator))
 
     case messages |> Enum.filter(fn m -> case m do
           {:error, _} -> true
@@ -86,23 +84,25 @@ defmodule MT940.Parser do
 
 
   defp parse_message(raw, line_separator) when is_binary(raw) do
-    parts = raw
-    |> String.strip
-    |> String.split(Regex.compile!("(#{line_separator}?)?:\\d{2,2}\\w?:()"), on: :all_but_first, trim: true)
-    |> Stream.map(&String.strip/1)
-    |> Stream.chunk(2)
-    |> Stream.map(fn [k, v] -> [k |> remove_newline!(line_separator), v] end)
+    tag = ":\\d{2,2}\\w?:"
 
-    case parts |> Enum.all?(fn [k, _] -> ~r/^:\d{2,2}\w?:/ |> Regex.match?(k) end) do
-      true  -> to_keywords(parts, line_separator)
+    parts = Regex.compile!("#{line_separator}(?!#{tag})")
+    |> Regex.replace(raw, "")
+
+    parts = Regex.compile!("#{line_separator}")
+    |> Regex.split(parts)
+    |> Enum.reject(fn s -> s == "" end)
+
+    case parts |> Enum.all?(fn s -> Regex.compile!("^#{tag}") |> Regex.match?(s) end) do
+      true  -> parts |> Enum.map(&Regex.run(Regex.compile!("^(#{tag})(.*)$"), &1, capture: :all_but_first)) |> to_keywords
       false -> {:error, :badarg}
     end
   end
 
 
-  defp to_keywords(parts, line_separator) do
+  defp to_keywords(parts) do
     parts
-    |> Stream.map(fn [k, v] -> MT940.TagHandler.split(k, v, line_separator) end)
+    |> Stream.map(fn [k, v] -> MT940.TagHandler.split(k, v) end)
     |> Enum.to_list
   end
 end

@@ -1,10 +1,10 @@
 defmodule MT940.StatementLine do
-  import Helper
-  use Timex
-
   @moduledoc ~S"""
   Statement Line
   """
+
+  import Helper
+  use Timex
 
   defstruct [
     :modifier,
@@ -22,7 +22,7 @@ defmodule MT940.StatementLine do
 
   use MT940.Field
 
-  defp parse_content(result = %__MODULE__{content: content}, _) do
+  defp parse_content(result = %__MODULE__{content: content}) do
     matches = ~r/^(\d{6})(\d{4})?(C|D|RC|RD)\D?(\d{1,12},\d{0,2})((?:N|F).{3})(NONREF|.{0,16})(?:$|\/\/)(.*)/
     |> Regex.run(content, capture: :all_but_first)
 

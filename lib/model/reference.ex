@@ -1,5 +1,4 @@
 defmodule MT940.Reference do
-
   @moduledoc ~S"""
   ## Related Reference
 
@@ -17,7 +16,7 @@ defmodule MT940.Reference do
 
   use MT940.Field
 
-  defp parse_content(result = %__MODULE__{content: content}, _) do
+  defp parse_content(result = %__MODULE__{content: content}) do
     %__MODULE__{result | reference: content}
   end
 

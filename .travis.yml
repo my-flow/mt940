@@ -1,18 +1,8 @@
 language: elixir
 elixir:
-    - 1.0.5
+    - 1.1.1
 otp_release:
-    - 17.4
-before_script:
-  # Set download location
-  - export PLT_FILENAME=elixir-${TRAVIS_ELIXIR_VERSION}_${TRAVIS_OTP_RELEASE}.plt
-  - export PLT_LOCATION=/home/travis/$PLT_FILENAME
-  # Download PLT from danielberkompas/travis_elixir_plts on Github
-  # Store in $PLT_LOCATION
-  - wget -O $PLT_LOCATION https://raw.github.com/danielberkompas/travis_elixir_plts/master/$PLT_FILENAME
-script:
-  - mix test
-  - dialyzer --no_check_plt --plt $PLT_LOCATION --no_native _build/test/lib/mt940/ebin
+    - 18.1
 after_success:
   - mix do compile, coveralls.travis
 after_script:

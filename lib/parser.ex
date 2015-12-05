@@ -40,7 +40,7 @@ defmodule MT940.Parser do
     * `:badarg`  - the format of the raw input is not MT940
   """
   def parse(raw) when is_binary(raw) do
-    line_separator = ~r/^(.*)\:/rs
+    line_separator = ~r/^(.*)\:/Us
     |> Regex.run(raw, capture: :all_but_first)
 
     case line_separator do

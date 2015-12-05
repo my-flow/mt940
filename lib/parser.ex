@@ -44,8 +44,8 @@ defmodule MT940.Parser do
     |> Regex.run(raw, capture: :all_but_first)
 
     case line_separator do
-      [""|_] -> raw |> split_messages_into_parts "\\R"
-      [hd|_] -> raw |> split_messages_into_parts hd
+      [""|_] -> raw |> split_messages_into_parts("\\R")
+      [hd|_] -> raw |> split_messages_into_parts(hd)
       _      -> {:error, :badarg}
     end
   end

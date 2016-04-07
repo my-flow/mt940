@@ -4,8 +4,8 @@ defmodule Mt940.Mixfile do
   def project do
     [
       app: :mt940,
-      version: "0.4.0",
-      elixir: "~> 1.1",
+      version: "0.4.1",
+      elixir: "~> 1.2.4",
       description: description,
       package: package,
       deps: deps,

@@ -16,7 +16,7 @@ end-of-day statement file which details all entries booked to a bank account.
 Include a dependency in your `mix.exs`:
 
 ```elixir
-deps: [{:mt940, "~> 0.3.2"}, …]
+deps: [{:mt940, "~> 0.4.1"}, …]
 ```
 
 `use MT940` and `parse!` the raw input:
@@ -58,6 +58,6 @@ API documentation is available at [http://hexdocs.pm/mt940](http://hexdocs.pm/mt
 
 ## Copyright & License
 
-Copyright (c) 2015 [Florian J. Breunig](http://www.my-flow.com)
+Copyright (c) 2015-2016 [Florian J. Breunig](http://www.my-flow.com)
 
 Licensed under MIT, see LICENSE file.

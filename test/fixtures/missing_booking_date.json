@@ -3,7 +3,7 @@
     {
       "amount":                   "7.50",
       "content":                  "091210C000000000007,50N021117301582",
-      "value_date":               "2009-12-10T00:00:00+0000",
+      "value_date":               "2009-12-10T00:00:00+00:00",
       "entry_date":               null,
       "funds_code":               "credit",
       "modifier":                 null,

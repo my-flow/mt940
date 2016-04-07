@@ -26,10 +26,10 @@ defmodule MT940.StatementLine do
     matches = ~r/^(\d{6})(\d{4})?(C|D|RC|RD)\D?(\d{1,12},\d{0,2})((?:N|F).{3})(NONREF|.{0,16})(?:$|\/\/)(.*)/
     |> Regex.run(content, capture: :all_but_first)
 
-    value_date = matches |> Enum.at(0) |> DateFormat.parse!("{YY}{M}{D}")
+    value_date = matches |> Enum.at(0) |> Timex.parse!("{YY}{M}{D}") |> Date.from
     entry_date = case matches |> Enum.at(1) do
       "" -> nil
-      _  -> "#{value_date.year}#{Enum.at(matches, 1)}" |> DateFormat.parse!("{YYYY}{M}{D}")
+      _  -> "#{value_date.year}#{Enum.at(matches, 1)}" |> Timex.parse!("{YYYY}{M}{D}") |> Date.from
     end
     funds_code = case matches |> Enum.at(2) do
       "C"  -> :credit

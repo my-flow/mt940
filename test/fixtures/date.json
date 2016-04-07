@@ -30,13 +30,13 @@
       "sign":             "credit",
       "currency":         "EUR",
       "amount":           "200.00",
-      "date":             "2015-11-09T00:00:00+0000"
+      "date":             "2015-11-09T00:00:00+00:00"
     },
     {
       "amount":                   "10.40",
       "content":                  "1511091109DR10,40NMSCNONREF//POS 2775118254",
-      "value_date":               "2015-11-09T00:00:00+0000",
-      "entry_date":               "2015-11-09T00:00:00+0000",
+      "value_date":               "2015-11-09T00:00:00+00:00",
+      "entry_date":               "2015-11-09T00:00:00+00:00",
       "funds_code":               "debit",
       "modifier":                 null,
       "reference":                "NONREF",
@@ -69,7 +69,7 @@
       "balance_type": "intermediate",
       "content":      "C151110EUR189,60",
       "currency":     "EUR",
-      "date":         "2015-11-10T00:00:00+0000",
+      "date":         "2015-11-10T00:00:00+00:00",
       "modifier":     "M",
       "sign":         "credit"
     }

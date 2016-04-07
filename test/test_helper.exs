@@ -7,21 +7,21 @@ defimpl JSX.Encoder, for: [MT940.StatementLine, MT940.AccountBalance, MT940.Clos
   def json(d) do
     d = case d do
       %{date: date} when date != nil ->
-        %{d | date: date |> DateFormat.format!("{ISO}")}
+        %{d | date: date |> Timex.format!("{ISO}")}
       _ ->
         d
     end
 
     d = case d do
       %{value_date: value_date} when value_date != nil ->
-        %{d | value_date: value_date |> DateFormat.format!("{ISO}")}
+        %{d | value_date: value_date |> Timex.format!("{ISO}")}
       _ ->
         d
     end
 
     d = case d do
       %{entry_date: entry_date} when entry_date != nil ->
-        %{d | entry_date: entry_date |> DateFormat.format!("{ISO}")}
+        %{d | entry_date: entry_date |> Timex.format!("{ISO}")}
       _ ->
         d
     end

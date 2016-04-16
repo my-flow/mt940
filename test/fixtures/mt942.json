@@ -1,0 +1,94 @@
+[
+  [
+    {
+      "modifier":                 null,
+      "content":                  "TECHMIX",
+      "reference":                "TECHMIX"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "PL89106000760000321000006053",
+      "bank_code":                null,
+      "account_number":           "PL89106000760000321000006053",
+      "account_currency":         null
+    },
+    {
+      "modifier":                 "C",
+      "content":                  "00001/001",
+      "number":                   1,
+      "sheet":                    1
+    },
+    {
+      "modifier":                 "F",
+      "content":                  "PLN0,",
+      "sign":                     "credit",
+      "currency":                 "PLN",
+      "amount":                   "0"
+    },
+    {
+      "modifier":                 "D",
+      "content":                  "0506100744+0200",
+      "date":                     "2005-06-10T07:44:00+02:00",
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0506100610D93,17FMSCNONREF//61270017951510016006127001795151001",
+      "funds_code":               "debit",
+      "amount":                   "93.17",
+      "swift_code":               "FMSC",
+      "reference":                "NONREF",
+      "transaction_description":  "61270017951510016006127001795151001",
+      "value_date":               "2005-06-10T00:00:00+00:00",
+      "entry_date":               "2005-06-10T00:00:00+00:00"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "Przelew MultiCash+ Nr rach org pod 69 1010 1270 0004 5922 2100 0000 Nazwa org.podat URZAD SKARBOWY KRAKOW STARE MIASTO GRODZKA 65 Typ identyf. N Id.uzup 1230819862 Okres platnosci 02M10 Symbolformul. PIT Ident. zobow DECYZJA RYCZALT",
+      "code":                     null,
+      "transaction_description":  null,
+      "prima_nota":               null,
+      "details":                  [
+        "Przelew MultiCash+ Nr rach org pod 69 1010 1270 0004 5922 2100 0000 Nazwa org.podat URZAD SKARBOWY KRAKOW STARE MIASTO GRODZKA 65 Typ identyf. N Id.uzup 1230819862 Okres platnosci 02M10 Symbolformul. PIT Ident. zobow DECYZJA RYCZALT"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 null,
+      "content":                  "0506100610D93,16FMSCNONREF//2700179510100001600612700179510100001",
+      "funds_code":               "debit",
+      "amount":                   "93.16",
+      "swift_code":               "FMSC",
+      "reference":                "NONREF",
+      "transaction_description":  "2700179510100001600612700179510100001",
+      "value_date":               "2005-06-10T00:00:00+00:00",
+      "entry_date":               "2005-06-10T00:00:00+00:00"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "Przelew MultiCash+ Nr rach org pod 69 1010 1270 0004 5922 2100 0000 Nazwa org.podat URZAD SKARBOWY KRAKOW STARE MIASTO GRODZKA 65 Typ identyf. N Id.uzup 1230819862 Okres platnosci 02M10 Symbolformul. PIT Ident. zobow DECYZJA RYCZALT",
+      "code":                     null,
+      "transaction_description":  null,
+      "prima_nota":               null,
+      "details":                  [
+        "Przelew MultiCash+ Nr rach org pod 69 1010 1270 0004 5922 2100 0000 Nazwa org.podat URZAD SKARBOWY KRAKOW STARE MIASTO GRODZKA 65 Typ identyf. N Id.uzup 1230819862 Okres platnosci 02M10 Symbolformul. PIT Ident. zobow DECYZJA RYCZALT"
+      ],
+      "bank_code":                null,
+      "account_number":           null,
+      "account_holder":           [],
+      "text_key_extension":       null,
+      "not_implemented_fields":   []
+    },
+    {
+      "modifier":                 "D",
+      "content":                  "2PLN186,33",
+      "count":                    "2",
+      "sign":                     "debit",
+      "currency":                 "PLN",
+      "amount":                   "186.33"
+    }
+  ]
+]

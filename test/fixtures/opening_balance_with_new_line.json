@@ -1,12 +1,12 @@
 [
   [
     {
+      "modifier":     "F",
+      "content":      "C150401EUR2446,61",
       "amount":       "2446.61",
       "balance_type": "start",
-      "content":      "C150401EUR2446,61",
       "currency":     "EUR",
       "date":         "2015-04-01T00:00:00+00:00",
-      "modifier":     "F",
       "sign":         "credit"
     }
   ]

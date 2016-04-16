@@ -1,15 +1,16 @@
-MT940 parser for Elixir
-=======================
+MT940/MT942 parser for Elixir
+=============================
 
 [![Build Status](https://travis-ci.org/my-flow/mt940.svg?branch=master)](https://travis-ci.org/my-flow/mt940)
 [![Coverage Status](https://coveralls.io/repos/my-flow/mt940/badge.svg?branch=master)](https://coveralls.io/r/my-flow/mt940?branch=master)
 [![Hex.pm](https://img.shields.io/hexpm/v/mt940.svg)](https://hex.pm/packages/mt940)
 [![Inline docs](http://inch-ci.org/github/my-flow/mt940.svg)](http://inch-ci.org/github/my-flow/mt940)
 
-This is a library to parse MT940 account statements. It was ported from Ruby and is based on
+This is a library to parse MT940 and MT942 account statements. It was ported from Ruby and is based on
 [Thies C. Arntzen's mt940 library](https://github.com/betterplace/mt940_parser).
-MT940 is a standard structured customer statement message format developed by SWIFT. It is an
-end-of-day statement file which details all entries booked to a bank account.
+The MT94x category of SWIFT messages are meant for customer statements and cash management:
+- **MT940** is the standard structured _Customer Statement Message_ format (end-of-day statement file which details all entries booked to a bank account). Usually you receive a customer statement message the next morning of the day of business.
+- **MT942** is the standard structured _Interim Transaction Report_ format. MT942 gives a report of the debits/credits any given time of the day.
 
 ## Basic usage
 

@@ -1,20 +1,20 @@
 [
   [
     {
-      "content":          "STARTUMS",
       "modifier":         null,
+      "content":          "STARTUMS",
       "reference":        "STARTUMS"
     },
     {
+      "modifier":         null,
+      "content":          "99999999/888888",
       "account_currency": null,
       "account_number":   "888888",
-      "bank_code":        "99999999",
-      "content":          "99999999/888888",
-      "modifier":         null
+      "bank_code":        "99999999"
     },
     {
-      "content":          "6/1",
       "modifier":         "C",
+      "content":          "6/1",
       "number":           6,
       "sheet":            1
     },
@@ -28,12 +28,12 @@
       "date":             "2010-07-16T00:00:00+00:00"
     },
     {
-      "amount":                   "5.9",
+      "modifier":                 null,
       "content":                  "1008010802DR5,9N024NONREF",
+      "amount":                   "5.9",
       "value_date":               "2010-08-01T00:00:00+00:00",
       "entry_date":               "2010-08-02T00:00:00+00:00",
       "funds_code":               "debit",
-      "modifier":                 null,
       "reference":                "NONREF",
       "swift_code":               "N024",
       "transaction_description":  null
@@ -67,12 +67,12 @@
       "not_implemented_fields":   []
     },
     {
-      "amount":                   "0.0",
+      "modifier":                 null,
       "content":                  "1008010802CR0,0N024NONREF",
+      "amount":                   "0.0",
       "value_date":               "2010-08-01T00:00:00+00:00",
       "entry_date":               "2010-08-02T00:00:00+00:00",
       "funds_code":               "credit",
-      "modifier":                 null,
       "reference":                "NONREF",
       "swift_code":               "N024",
       "transaction_description":  null
@@ -106,12 +106,12 @@
       "not_implemented_fields":   []
     },
     {
-      "amount":                   "0.0",
+      "modifier":                 null,
       "content":                  "1008010802CR0,0N024NONREF",
+      "amount":                   "0.0",
       "value_date":               "2010-08-01T00:00:00+00:00",
       "entry_date":               "2010-08-02T00:00:00+00:00",
       "funds_code":               "credit",
-      "modifier":                 null,
       "reference":                "NONREF",
       "swift_code":               "N024",
       "transaction_description":  null
@@ -143,12 +143,12 @@
       "not_implemented_fields":   []
     },
     {
-      "amount":                   "0.0",
+      "modifier":                 null,
       "content":                  "1008010802CR0,0N024NONREF",
+      "amount":                   "0.0",
       "value_date":               "2010-08-01T00:00:00+00:00",
       "entry_date":               "2010-08-02T00:00:00+00:00",
       "funds_code":               "credit",
-      "modifier":                 null,
       "reference":                "NONREF",
       "swift_code":               "N024",
       "transaction_description":  null
@@ -170,12 +170,12 @@
       "not_implemented_fields":   []
     },
     {
+      "modifier":     "F",
+      "content":      "C100802EUR1925,52",
       "amount":       "1925.52",
       "balance_type": "start",
-      "content":      "C100802EUR1925,52",
       "currency":     "EUR",
       "date":         "2010-08-02T00:00:00+00:00",
-      "modifier":     "F",
       "sign":         "credit"
     }
   ]

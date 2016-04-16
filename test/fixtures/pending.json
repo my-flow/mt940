@@ -1,0 +1,80 @@
+[
+  [
+    {
+      "modifier":                   null,
+      "content":                    "STARTUMS",
+      "reference":                  "STARTUMS"
+    },
+    {
+      "modifier":                   null,
+      "content":                    "72090900/9876543219",
+      "account_currency":           null,
+      "account_number":             "9876543219",
+      "bank_code":                  "72090900"
+    },
+    {
+      "content":                    "0",
+      "modifier":                   "C",
+      "number":                     null,
+      "sheet":                      0
+},
+    {
+      "modifier":                   "F",
+      "content":                    "EUR 999999999999,99",
+      "amount":                     "999999999999.99",
+      "currency":                   "EUR",
+      "sign":                       "credit"
+    },
+    {
+      "modifier":                   null,
+      "content":                    "1604202255",
+      "date":                       "2016-04-20T22:55:00+00:00",
+    },
+    {
+      "modifier":                   null,
+      "content":                    "160421D0,02NMSCKREF+",
+      "amount":                     "0.02",
+      "entry_date":                 null,
+      "funds_code":                 "debit",
+      "reference":                  "KREF+",
+      "swift_code":                 "NMSC",
+      "transaction_description":    null,
+      "value_date":                 "2016-04-21T00:00:00+00:00"
+    },
+    {
+      "modifier":                   null,
+      "content":                    "177?00EURO-Überweisung?10804?20KREF+2016-04-20T20:53:12.74?210Z ?22SVWZ+Black TAN1:113040 IBAN?23: DE29200411111234567890 BI?24C: COBADEHD001 ?30COBADEHD001?31DE29200411111234567890?32Florian Joerg Breunig",
+      "account_holder":             ["Florian Joerg Breunig"],
+      "account_number":             "DE29200411111234567890",
+      "bank_code":                  "COBADEHD001",
+      "code":                       177,
+      "details":                    [
+                                      "KREF+2016-04-20T20:53:12.74",
+                                      "0Z",
+                                      "SVWZ+Black TAN1:113040 IBAN",
+                                      ": DE29200411111234567890 BI",
+                                      "C: COBADEHD001"
+                                    ],
+      "not_implemented_fields":     [],
+      "prima_nota":                 804,
+      "text_key_extension":         null,
+      "transaction_description":    "EURO-Überweisung"
+    },
+    {
+      "modifier":                   "D",
+      "content":                    "1EUR,02",
+      "amount":                     "0.02",
+      "count":                      "1",
+      "currency":                   "EUR",
+      "sign":                       "debit"
+    },
+    {
+      "modifier":                   "C",
+      "content":                    "EUR,00",
+      "amount":                     "0.00",
+      "count":                      0,
+      "currency":                   "EUR",
+      "sign":                       "credit"
+    }
+  ]
+]

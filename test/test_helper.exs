@@ -1,37 +1,23 @@
 ExUnit.start()
 
-defimpl JSX.Encoder, for: [MT940.StatementLine, MT940.AccountBalance, MT940.ClosingBalance,
-    MT940.FutureValutaBalance, MT940.ValutaBalance] do
+defimpl JSX.Encoder, for: [MT940.StatementLine, MT940.AccountBalance, MT940.CreationDate,
+    MT940.ClosingBalance, MT940.FloorLimit, MT940.FutureValutaBalance, MT940.Summary,
+    MT940.ValutaBalance] do
   use Timex
 
   def json(d) do
-    d = case d do
-      %{date: date} when date != nil ->
-        %{d | date: date |> Timex.format!("{ISO}")}
-      _ ->
-        d
-    end
 
-    d = case d do
-      %{value_date: value_date} when value_date != nil ->
-        %{d | value_date: value_date |> Timex.format!("{ISO}")}
-      _ ->
-        d
-    end
+    d = with %{date: date} <- d,
+        do: %{d | date:       date && date |> Timex.format!("{ISO}")}
 
-    d = case d do
-      %{entry_date: entry_date} when entry_date != nil ->
-        %{d | entry_date: entry_date |> Timex.format!("{ISO}")}
-      _ ->
-        d
-    end
+    d = with %{value_date: value_date} <- d,
+        do: %{d | value_date: value_date && value_date |> Timex.format!("{ISO}")}
 
-    d = case d do
-      %{amount: amount} when amount != nil ->
-        %{d | amount: amount |> to_string}
-      _ ->
-        d
-    end
+    d = with %{entry_date: entry_date} <- d,
+        do: %{d | entry_date: entry_date && entry_date |> Timex.format!("{ISO}")}
+
+    d = with %{amount: amount} <- d,
+        do: %{d | amount: amount && amount |> to_string}
 
     d
     |> Map.from_struct

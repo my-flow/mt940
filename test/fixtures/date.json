@@ -1,25 +1,25 @@
 [
   [
     {
-      "content":          "MT940-1511111253",
       "modifier":         null,
+      "content":          "MT940-1511111253",
       "reference":        "MT940-1511111253"
     },
     {
-      "content":          "NONREF",
       "modifier":         null,
+      "content":          "NONREF",
       "reference":        "NONREF"
     },
     {
+      "modifier":         null,
+      "content":          "20041111/877321000EUR",
       "account_currency": "EUR",
       "account_number":   "877321000",
-      "bank_code":        "20041111",
-      "content":          "20041111/877321000EUR",
-      "modifier":         null
+      "bank_code":        "20041111"
     },
     {
-      "content":          "0/3",
       "modifier":         "C",
+      "content":          "0/3",
       "number":           0,
       "sheet":            3
     },
@@ -33,12 +33,12 @@
       "date":             "2015-11-09T00:00:00+00:00"
     },
     {
-      "amount":                   "10.40",
+      "modifier":                 null,
       "content":                  "1511091109DR10,40NMSCNONREF//POS 2775118254",
+      "amount":                   "10.40",
       "value_date":               "2015-11-09T00:00:00+00:00",
       "entry_date":               "2015-11-09T00:00:00+00:00",
       "funds_code":               "debit",
-      "modifier":                 null,
       "reference":                "NONREF",
       "swift_code":               "NMSC",
       "transaction_description":  "POS 2775118254"
@@ -65,12 +65,12 @@
       "not_implemented_fields":   []
     },
     {
+      "modifier":     "M",
+      "content":      "C151110EUR189,60",
       "amount":       "189.60",
       "balance_type": "intermediate",
-      "content":      "C151110EUR189,60",
       "currency":     "EUR",
       "date":         "2015-11-10T00:00:00+00:00",
-      "modifier":     "M",
       "sign":         "credit"
     }
   ]

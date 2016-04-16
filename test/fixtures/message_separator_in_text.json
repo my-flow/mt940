@@ -1,35 +1,35 @@
 [
   [
     {
-      "content":          "MT940-1107120120",
       "modifier":         null,
+      "content":          "MT940-1107120120",
       "reference":        "MT940-1107120120"
     },
     {
-      "content":   "NONREF",
       "modifier":  null,
+      "content":   "NONREF",
       "reference": "NONREF"
     },
     {
+      "modifier":         null,
+      "content":          "20011111/120119000EUR",
       "account_currency": "EUR",
       "account_number":   "120119000",
-      "bank_code":        "20011111",
-      "content":          "20011111/120119000EUR",
-      "modifier":         null
+      "bank_code":        "20011111"
     },
     {
-      "content":  "0/32",
       "modifier": "C",
+      "content":  "0/32",
       "number":   0,
       "sheet":    32
     },
     {
+      "modifier":     "M",
+      "content":      "C110202EUR123,58",
       "amount":       "123.58",
       "balance_type": "intermediate",
-      "content":      "C110202EUR123,58",
       "currency":     "EUR",
       "date":         "2011-02-02T00:00:00+00:00",
-      "modifier":     "M",
       "sign":         "credit"
     },
     {
@@ -67,12 +67,12 @@
       "not_implemented_fields":   []
     },
     {
+      "modifier":     "F",
+      "content":      "D110202EUR39,09",
       "amount":       "39.09",
       "balance_type": "start",
-      "content":      "D110202EUR39,09",
       "currency":     "EUR",
       "date":         "2011-02-02T00:00:00+00:00",
-      "modifier":     "F",
       "sign":         "debit"
     }
   ]

@@ -1,11 +1,11 @@
 [
   [
     {
+      "modifier":         null,
+      "content":          "20041111/301086000EUR",
       "account_currency": "EUR",
       "account_number":   "301086000",
-      "bank_code":        "20041111",
-      "content":          "20041111/301086000EUR",
-      "modifier":         null
+      "bank_code":        "20041111"
     }
   ]
 ]

@@ -1,12 +1,12 @@
 [
   [
     {
-      "amount":                   "7.50",
+      "modifier":                 null,
       "content":                  "091210C000000000007,50N021117301582",
+      "amount":                   "7.50",
       "value_date":               "2009-12-10T00:00:00+00:00",
       "entry_date":               null,
       "funds_code":               "credit",
-      "modifier":                 null,
       "reference":                "117301582",
       "swift_code":               "N021",
       "transaction_description":  null

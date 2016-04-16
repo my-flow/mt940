@@ -4,6 +4,16 @@ defmodule MT940.TagHandler do
   use Timex
 
 
+  def split(":13D:", content) do
+    MT940.CreationDate.new "D", content
+  end
+
+
+  def split(":13:", content) do
+    MT940.CreationDate.new content
+  end
+
+
   def split(":20:", content) do
     MT940.Job.new content
   end
@@ -26,6 +36,11 @@ defmodule MT940.TagHandler do
 
   def split(":28C:", content) do
     MT940.Statement.new "C", content
+  end
+
+
+  def split(":34F:", content) do
+    MT940.FloorLimit.new "F", content
   end
 
 
@@ -56,5 +71,10 @@ defmodule MT940.TagHandler do
 
   def split(":86:", content) do
     MT940.StatementLineInformation.new content
+  end
+
+
+  def split(":90" <> <<modifier>> <> ":", content) do
+    MT940.Summary.new <<modifier>>, content
   end
 end

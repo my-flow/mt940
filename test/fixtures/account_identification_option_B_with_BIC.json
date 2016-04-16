@@ -1,11 +1,11 @@
 [
   [
     {
+      "modifier":         null,
+      "content":          "BPHKPLPK/320000546101",
       "account_currency": null,
       "account_number":   "320000546101",
-      "bank_code":        "BPHKPLPK",
-      "content":          "BPHKPLPK/320000546101",
-      "modifier":         null
+      "bank_code":        "BPHKPLPK"
     }
   ]
 ]

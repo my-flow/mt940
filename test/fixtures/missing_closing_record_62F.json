@@ -1,0 +1,44 @@
+[
+  [
+    {
+      "modifier":                 null,
+      "content":                  "BOFA/US220647USD",
+      "reference":                "BOFA/US220647USD"
+    },
+    {
+      "modifier":                 null,
+      "content":                  "55590040647",
+      "bank_code":                null,
+      "account_number":           "55590040647",
+      "account_currency":         null
+    },
+    {
+      "modifier":                 "C",
+      "content":                  "00478/01",
+      "number":                   478,
+      "sheet":                    1
+    },
+    {
+      "modifier":                 null,
+      "content":                  "100930D20,NCMZNOREF",
+      "amount":                   "20",
+      "value_date":               "2010-09-30T00:00:00+00:00",
+      "entry_date":               null,
+      "funds_code":               "debit",
+      "reference":                "NOREF",
+      "swift_code":               "NCMZ",
+      "transaction_description":  null
+    },
+    {
+      "modifier":                 null,
+      "content":                  "100930D86,NCMZNOREF",
+      "amount":                   "86",
+      "value_date":               "2010-09-30T00:00:00+00:00",
+      "entry_date":               null,
+      "funds_code":               "debit",
+      "reference":                "NOREF",
+      "swift_code":               "NCMZ",
+      "transaction_description":  null
+    },
+  ]
+]

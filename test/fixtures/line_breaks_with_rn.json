@@ -1,14 +1,14 @@
 [
-	[
-  	{
-    	"content":		"MT940-1505020136",
-      "modifier":		null,
-      "reference":	"MT940-1505020136"
+  [
+    {
+      "modifier":   null,
+      "content":    "MT940-1505020136",
+      "reference":  "MT940-1505020136"
     },
     {
-      "content":		"NONREF",
-      "modifier":		null,
-      "reference":	"NONREF"
+      "modifier":   null,
+      "content":    "NONREF",
+      "reference":  "NONREF"
     }
   ]
 ]

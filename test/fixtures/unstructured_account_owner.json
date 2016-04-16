@@ -1,6 +1,8 @@
 [
   [
     {
+      "modifier":                 null,
+      "content":                  "MultiSafepay ID : 10269 (Direct Debit)",
       "details":
         [
           "MultiSafepay ID : 10269 (Direct Debit)"
@@ -9,8 +11,6 @@
       "account_number":           null,
       "bank_code":                null,
       "code":                     null,
-      "content":                  "MultiSafepay ID : 10269 (Direct Debit)",
-      "modifier":                 null,
       "not_implemented_fields":   [],
       "prima_nota":               null,
       "text_key_extension":       null,

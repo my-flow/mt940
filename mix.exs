@@ -4,12 +4,12 @@ defmodule Mt940.Mixfile do
   def project do
     [
       app: :mt940,
-      version: "0.4.1",
+      version: "1.0.0",
       elixir: "~> 1.2.4",
       description: description,
       package: package,
       deps: deps,
-      name: "MT940 Parser",
+      name: "MT940/MT942 Parser",
       source_url: "https://github.com/my-flow/mt940",
       dialyzer: [plt_add_deps: true],
       test_coverage: [tool: ExCoveralls],
@@ -39,7 +39,7 @@ defmodule Mt940.Mixfile do
 
   defp description do
     """
-    MT940 parser for Elixir.
+    MT940/MT942 parser for Elixir.
     """
   end
 

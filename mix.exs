@@ -5,7 +5,7 @@ defmodule Mt940.Mixfile do
     [
       app: :mt940,
       version: "1.0.0",
-      elixir: "~> 1.2.4",
+      elixir: "~> 1.2",
       description: description,
       package: package,
       deps: deps,
@@ -25,13 +25,13 @@ defmodule Mt940.Mixfile do
 
   defp deps do
     [
-      {:decimal,     "~> 1.1.1" },
+      {:decimal,     "~> 1.1.2" },
       {:exjsx,       "~> 3.2.0",  only: [:dev, :test]},
-      {:excoveralls, "~> 0.5.2",  only: [:dev, :test]},
+      {:excoveralls, "~> 0.5.4",  only: [:dev, :test]},
       {:earmark,     "~> 0.2.1",  only: :dev},
-      {:ex_doc,      "~> 0.11.4", only: :dev},
+      {:ex_doc,      "~> 0.11.5", only: :dev},
       {:inch_ex,     "~> 0.5.1",  only: :docs},
-      {:timex,       "~> 2.1.4"},
+      {:timex,       "~> 2.1.6"},
       {:tzdata,      "~> 0.1.8",  override: true}
     ]
   end

@@ -1,4 +1,5 @@
 defmodule MT940.StatementLineBundle do
+  @moduledoc false
 
   defstruct [
     :amount,
@@ -25,7 +26,7 @@ defmodule MT940.StatementLineBundle do
       account_holder:           statement_line_info.account_holder,
       details:                  statement_line_info.details,
       account_number:           statement_line_info.account_number,
-      bank_code:                statement_line_info.bank_code, 
+      bank_code:                statement_line_info.bank_code,
       code:                     statement_line_info.code,
       transaction_description:  statement_line_info.transaction_description
     }

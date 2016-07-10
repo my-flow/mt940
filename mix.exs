@@ -25,6 +25,7 @@ defmodule Mt940.Mixfile do
 
   defp deps do
     [
+      {:credo,       "~> 0.4.3",  only: [:dev, :test]},
       {:decimal,     "~> 1.1.2" },
       {:exjsx,       "~> 3.2.0",  only: [:dev, :test]},
       {:excoveralls, "~> 0.5.5",  only: :test},
@@ -32,7 +33,7 @@ defmodule Mt940.Mixfile do
       {:ex_doc,      "~> 0.12.0", only: :dev},
       {:inch_ex,     "~> 0.5.3",  only: :docs},
       {:timex,       "~> 2.2.1"},
-      {:tzdata,      "~> 0.1.8"}
+      {:tzdata,      "~> 0.1.8",  override: true}
     ]
   end
 

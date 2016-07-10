@@ -44,7 +44,7 @@ defmodule MT940.StatementLine do
       "" -> nil
       _  -> matches |> Enum.at(6)
     end
-    
+
     %__MODULE__{result |
       value_date:              value_date,
       entry_date:              entry_date,

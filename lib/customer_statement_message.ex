@@ -5,6 +5,13 @@ defmodule MT940.CustomerStatementMessage do
   command. Use it in order to make dealing with data easier.
   """
 
+  alias MT940.Account
+  alias MT940.ClosingBalance
+  alias MT940.Parser
+  alias MT940.StatementLine
+  alias MT940.StatementLineBundle
+  alias MT940.StatementLineInformation
+
   require Record
 
   Record.defrecordp :message, __MODULE__,
@@ -23,7 +30,7 @@ defmodule MT940.CustomerStatementMessage do
   @spec parse!(binary) :: list
   def parse!(data) when is_binary(data) do
     data
-    |> MT940.Parser.parse!
+    |> Parser.parse!
     |> Enum.map(&new/1)
   end
 
@@ -31,7 +38,7 @@ defmodule MT940.CustomerStatementMessage do
   defp new(lines) do
     account = lines
     |> Stream.filter(fn
-      %MT940.Account{} -> true
+      %Account{} -> true
       _ -> false
     end)
     |> Enum.at(0)
@@ -39,17 +46,17 @@ defmodule MT940.CustomerStatementMessage do
     lines |> ensure_structure!
 
     statement_lines = lines
-    |> Stream.filter(fn 
-      %MT940.StatementLine{} -> true
-      %MT940.StatementLineInformation{} -> true
+    |> Stream.filter(fn
+      %StatementLine{} -> true
+      %StatementLineInformation{} -> true
       _ -> false
     end)
     |> Enum.chunk(2)
-    |> Enum.map(&MT940.StatementLineBundle.new(&1 |> Enum.at(0), &1 |> Enum.at(1)))
+    |> Enum.map(&StatementLineBundle.new(Enum.at(&1, 0), Enum.at(&1, 1)))
 
     closing_balance = lines
     |> Stream.filter(fn
-      %MT940.ClosingBalance{} -> true
+      %ClosingBalance{} -> true
       _ -> false
     end)
     |> Enum.at(-1)
@@ -82,28 +89,28 @@ defmodule MT940.CustomerStatementMessage do
   end
 
 
-  defp ensure_structure!([%MT940.StatementLine{}, %MT940.StatementLineInformation{} | lines]) do
+  defp ensure_structure!([%StatementLine{}, %StatementLineInformation{} | lines]) do
     ensure_structure!(lines)
   end
 
 
-  defp ensure_structure!([%MT940.StatementLine{}, t2 | _]) do
-    raise UnexpectedStructureError, expected: MT940.StatementLineInformation, actual: t2.__struct__
+  defp ensure_structure!([%StatementLine{}, t2 | _]) do
+    raise UnexpectedStructureError, expected: StatementLineInformation, actual: t2.__struct__
   end
 
 
-  defp ensure_structure!([%MT940.StatementLine{}]) do
-    raise UnexpectedStructureError, expected: MT940.StatementLineInformation, actual: "(none)"
+  defp ensure_structure!([%StatementLine{}]) do
+    raise UnexpectedStructureError, expected: StatementLineInformation, actual: "(none)"
   end
 
 
-  defp ensure_structure!([t1, %MT940.StatementLineInformation{} | _]) do
-    raise UnexpectedStructureError, expected: MT940.StatementLine, actual: t1.__struct__
+  defp ensure_structure!([t1, %StatementLineInformation{} | _]) do
+    raise UnexpectedStructureError, expected: StatementLine, actual: t1.__struct__
   end
 
 
-  defp ensure_structure!([%MT940.StatementLineInformation{} | _]) do
-    raise UnexpectedStructureError, expected: MT940.StatementLine, actual: nil
+  defp ensure_structure!([%StatementLineInformation{} | _]) do
+    raise UnexpectedStructureError, expected: StatementLine, actual: nil
   end
 
 

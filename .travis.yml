@@ -3,6 +3,9 @@ elixir:
     - 1.3.1
 otp_release:
     - 18.2.1
+script:
+  - MIX_ENV=test mix test --trace
+  - MIX_ENV=test mix credo --strict
 after_success:
   - mix do compile, coveralls.travis
 after_script:

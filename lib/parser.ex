@@ -30,6 +30,8 @@ defmodule MT940.Parser do
   the raw input cannot be parsed (i.e. it is literally an exception).
   """
 
+  alias MT940.TagHandler
+
 
   @doc """
   Returns `{:ok, result}`, where `result` is a list of SWIFT MT940 messages,
@@ -86,15 +88,19 @@ defmodule MT940.Parser do
   defp parse_message(raw, line_separator) when is_binary(raw) do
     tag = ":\\d{2,2}\\w?:"
 
-    parts = Regex.compile!("#{line_separator}(?!#{tag})")
+    parts = "#{line_separator}(?!#{tag})"
+    |> Regex.compile!
     |> Regex.replace(raw, "")
 
-    parts = Regex.compile!("#{line_separator}")
+    parts = "#{line_separator}"
+    |> Regex.compile!
     |> Regex.split(parts)
     |> Enum.reject(fn s -> s == "" end)
 
-    case parts |> Enum.all?(fn s -> Regex.compile!("^#{tag}") |> Regex.match?(s) end) do
-      true  -> parts |> Enum.map(&Regex.run(Regex.compile!("^(#{tag})(.*)$"), &1, capture: :all_but_first)) |> to_keywords
+    case parts |> Enum.all?(fn s -> "^#{tag}" |> Regex.compile! |> Regex.match?(s) end) do
+      true  -> parts
+      |> Enum.map(&Regex.run(Regex.compile!("^(#{tag})(.*)$"), &1, capture: :all_but_first))
+      |> to_keywords
       false -> {:error, :badarg}
     end
   end
@@ -102,7 +108,7 @@ defmodule MT940.Parser do
 
   defp to_keywords(parts) do
     parts
-    |> Stream.map(fn [k, v] -> MT940.TagHandler.split(k, v) end)
+    |> Stream.map(fn [k, v] -> TagHandler.split(k, v) end)
     |> Enum.to_list
   end
 end

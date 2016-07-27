@@ -66,13 +66,13 @@ defmodule CustomerStatementMessageTest do
 
   test "statement lines should have an entry_date", context do
     line = context[:message].statement_lines |> Enum.at(0)
-    assert Timex.equal?(Date.from({2007, 9, 4}), line.entry_date)
+    assert Timex.equal?(~D[2007-09-04], line.entry_date)
   end
 
 
   test "statement lines should have a value date", context do
     line = context[:message].statement_lines |> Enum.at(0)
-    assert Timex.equal?(Date.from({2007, 9, 7}), line.value_date)
+    assert Timex.equal?(~D[2007-09-07], line.value_date)
   end
 
 

@@ -8,13 +8,13 @@ defimpl JSX.Encoder, for: [MT940.StatementLine, MT940.AccountBalance, MT940.Crea
   def json(d) do
 
     d = with %{date: date} <- d,
-        do: %{d | date:       date && date |> Timex.format!("{ISO}")}
+        do: %{d | date:       date && date |> Timex.format!("{ISO:Extended}")}
 
     d = with %{value_date: value_date} <- d,
-        do: %{d | value_date: value_date && value_date |> Timex.format!("{ISO}")}
+        do: %{d | value_date: value_date && value_date |> Timex.format!("{ISO:Extended}")}
 
     d = with %{entry_date: entry_date} <- d,
-        do: %{d | entry_date: entry_date && entry_date |> Timex.format!("{ISO}")}
+        do: %{d | entry_date: entry_date && entry_date |> Timex.format!("{ISO:Extended}")}
 
     d = with %{amount: amount} <- d,
         do: %{d | amount: amount && amount |> to_string}

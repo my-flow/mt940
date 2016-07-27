@@ -30,14 +30,14 @@
       "sign":             "credit",
       "currency":         "EUR",
       "amount":           "200.00",
-      "date":             "2015-11-09T00:00:00+00:00"
+      "date":             "2015-11-09T00:00:00"
     },
     {
       "modifier":                 null,
       "content":                  "1511091109DR10,40NMSCNONREF//POS 2775118254",
       "amount":                   "10.40",
-      "value_date":               "2015-11-09T00:00:00+00:00",
-      "entry_date":               "2015-11-09T00:00:00+00:00",
+      "value_date":               "2015-11-09T00:00:00",
+      "entry_date":               "2015-11-09T00:00:00",
       "funds_code":               "debit",
       "reference":                "NONREF",
       "swift_code":               "NMSC",
@@ -70,7 +70,7 @@
       "amount":       "189.60",
       "balance_type": "intermediate",
       "currency":     "EUR",
-      "date":         "2015-11-10T00:00:00+00:00",
+      "date":         "2015-11-10T00:00:00",
       "sign":         "credit"
     }
   ]

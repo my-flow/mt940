@@ -7,7 +7,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "380115.12",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     },
     {
       "modifier":     "F",
@@ -16,7 +16,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "380115.1",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     },
     {
       "modifier":     "F",
@@ -25,7 +25,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "380115",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     },
     {
       "modifier":     "F",
@@ -34,7 +34,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "0.12",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     },
     {
       "modifier":     "F",
@@ -43,7 +43,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "0.12",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     },
     {
       "modifier":     "F",
@@ -52,7 +52,7 @@
       "sign":         "credit",
       "currency":     "EUR",
       "amount":       "1.12",
-      "date":         "2010-03-18T00:00:00+00:00"
+      "date":         "2010-03-18T00:00:00"
     }
   ]
 ]

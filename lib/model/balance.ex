@@ -29,7 +29,7 @@ defmodule MT940.Balance do
 
         [sign, date, currency, amount] = ~r/^(\w{1})(\d{6})(\w{3})([0-9,]{1,15})$/
         |> Regex.run(content, capture: :all_but_first)
-        |> List.update_at(1, &Date.from(Timex.parse!(&1, "{YY}{M}{D}")))
+        |> List.update_at(1, &Timex.parse!(&1, "{YY}{M}{D}"))
         |> List.update_at(3, &convert_to_decimal(&1))
 
         sign = case sign do

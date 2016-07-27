@@ -29,7 +29,7 @@
       "amount":       "123.58",
       "balance_type": "intermediate",
       "currency":     "EUR",
-      "date":         "2011-02-02T00:00:00+00:00",
+      "date":         "2011-02-02T00:00:00",
       "sign":         "credit"
     },
     {
@@ -40,8 +40,8 @@
       "swift_code":               "NMSC",
       "reference":                "NONREF",
       "transaction_description":  "POS 2908012830",
-      "value_date":               "2011-02-02T00:00:00+00:00",
-      "entry_date":               "2011-02-02T00:00:00+00:00"
+      "value_date":               "2011-02-02T00:00:00",
+      "entry_date":               "2011-02-02T00:00:00"
     },
     {
       "modifier":                 null,
@@ -72,7 +72,7 @@
       "amount":       "39.09",
       "balance_type": "start",
       "currency":     "EUR",
-      "date":         "2011-02-02T00:00:00+00:00",
+      "date":         "2011-02-02T00:00:00",
       "sign":         "debit"
     }
   ]

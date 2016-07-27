@@ -6,7 +6,7 @@
       "amount":       "160.00",
       "balance_type": "start",
       "currency":     "EUR",
-      "date":         "2009-12-20T00:00:00+00:00",
+      "date":         "2009-12-20T00:00:00",
       "sign":         "debit"
     }
   ]

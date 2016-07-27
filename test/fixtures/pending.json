@@ -28,7 +28,7 @@
     {
       "modifier":                   null,
       "content":                    "1604202255",
-      "date":                       "2016-04-20T22:55:00+00:00",
+      "date":                       "2016-04-20T22:55:00",
     },
     {
       "modifier":                   null,
@@ -39,7 +39,7 @@
       "reference":                  "KREF+",
       "swift_code":                 "NMSC",
       "transaction_description":    null,
-      "value_date":                 "2016-04-21T00:00:00+00:00"
+      "value_date":                 "2016-04-21T00:00:00"
     },
     {
       "modifier":                   null,

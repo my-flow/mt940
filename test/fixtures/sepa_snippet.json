@@ -25,7 +25,7 @@
       "sign":                     "credit",
       "currency":                 "EUR",
       "amount":                   "766656.49",
-      "date":                     "2007-09-03T00:00:00+00:00"
+      "date":                     "2007-09-03T00:00:00"
     },
     {
       "modifier":                 null,
@@ -35,8 +35,8 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710333343453",
-      "value_date":               "2007-09-07T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-07T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -66,8 +66,8 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710324647450",
-      "value_date":               "2007-09-07T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-07T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -97,8 +97,8 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710324661090",
-      "value_date":               "2007-09-07T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-07T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -127,8 +127,8 @@
       "swift_code":               "NTRF",
       "reference":                "KREF+",
       "transaction_description":  "536D80EFEC56ACF8",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -156,7 +156,7 @@
       "sign":                     "credit",
       "currency":                 "EUR",
       "amount":                   "1125250.4",
-      "date":                     "2007-09-04T00:00:00+00:00"
+      "date":                     "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -165,7 +165,7 @@
       "sign":                     "credit",
       "currency":                 "EUR",
       "amount":                   "559614.51",
-      "date":                     "2007-09-04T00:00:00+00:00"
+      "date":                     "2007-09-04T00:00:00"
     }
   ],
 
@@ -195,7 +195,7 @@
       "sign":                     "debit",
       "currency":                 "EUR",
       "amount":                   "1970431.87",
-      "date":                     "2007-09-03T00:00:00+00:00"
+      "date":                     "2007-09-03T00:00:00"
     },
     {
       "modifier":                 null,
@@ -205,8 +205,8 @@
       "swift_code":               "NTRF",
       "reference":                "TFNr 40001 MSGID",
       "transaction_description":  "0724710345316116",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -234,8 +234,8 @@
       "swift_code":               "NTRF",
       "reference":                "TFNr 44001 MSGID",
       "transaction_description":  "0724710351063401",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -263,8 +263,8 @@
       "swift_code":               "NTRF",
       "reference":                "TFNr 40001 MSGID",
       "transaction_description":  "0724710345316110",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -292,8 +292,8 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710290659857",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -328,8 +328,8 @@
       "swift_code":               "NTRF",
       "reference":                "NONREF",
       "transaction_description":  "0724710290624796",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -357,8 +357,8 @@
       "swift_code":               "NTRF",
       "reference":                "TFNr 44001 MSGID",
       "transaction_description":  "R724710351063405",
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -386,8 +386,8 @@
       "swift_code":               "NMSC",
       "reference":                "NONREF",
       "transaction_description":  null,
-      "value_date":               "2007-09-04T00:00:00+00:00",
-      "entry_date":               "2007-09-04T00:00:00+00:00"
+      "value_date":               "2007-09-04T00:00:00",
+      "entry_date":               "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -411,7 +411,7 @@
       "sign":                     "debit",
       "currency":                 "EUR",
       "amount":                   "4472049.09",
-      "date":                     "2007-09-04T00:00:00+00:00"
+      "date":                     "2007-09-04T00:00:00"
     },
     {
       "modifier":                 null,
@@ -420,7 +420,7 @@
       "sign":                     "debit",
       "currency":                 "EUR",
       "amount":                   "4472049.09",
-      "date":                     "2007-09-04T00:00:00+00:00"
+      "date":                     "2007-09-04T00:00:00"
     }
   ]
 ]

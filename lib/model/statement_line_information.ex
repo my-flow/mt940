@@ -37,7 +37,7 @@ defmodule MT940.StatementLineInformation do
         "#{Regex.escape(separator)}(\\d{2})([^#{Regex.escape(separator)}]*)"
         |> Regex.compile!
         |> Regex.scan(text, capture: :all_but_first)
-        |> Enum.map(fn [code, content] -> [code |> String.to_integer, content |> String.strip] end)
+        |> Enum.map(fn [code, content] -> [code |> String.to_integer, content] end)
         |> Enum.reduce(result, &assign_sub_fields/2)
       [_] ->
         result

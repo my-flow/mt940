@@ -42,7 +42,7 @@ defmodule CustomerStatementMessageTest do
 
   test "statement lines should have account holder", context do
     line = context[:message].statement_lines |> Enum.at(0)
-    assert ["KARL", "KAUFMANN"] == line.account_holder
+    assert ["KARL", "        KAUFMANN"] == line.account_holder
   end
 
 
@@ -60,7 +60,7 @@ defmodule CustomerStatementMessageTest do
 
   test "statement lines should have details", context do
     line = context[:message].statement_lines |> Enum.at(0)
-    assert "EREF+EndToEndId TFNR 22 00400001SVWZ+Verw CTSc-01 BC-PPP TFNr 22 004" == line.details |> Enum.join
+    assert "EREF+EndToEndId TFNR 22 004 00001SVWZ+Verw CTSc-01 BC-PPP TFNr 22 004" == line.details |> Enum.join
   end
 
 

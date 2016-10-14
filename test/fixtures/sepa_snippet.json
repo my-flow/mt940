@@ -46,13 +46,13 @@
       "prima_nota":               399,
       "details":                  [
         "EREF+EndToEndId TFNR 22 004",
-        "00001",
+        " 00001",
         "SVWZ+Verw CTSc-01 BC-PPP TF",
         "Nr 22 004"
       ],
       "bank_code":                "DRESDEFF508",
       "account_number":           "DE14508800500194785000",
-      "account_holder":           ["KARL", "KAUFMANN"],
+      "account_holder":           ["KARL", "        KAUFMANN"],
       "text_key_extension":       null,
       "not_implemented_fields":   [
         [70, "Empfaenger Marta Metzger"]

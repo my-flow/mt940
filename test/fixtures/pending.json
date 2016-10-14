@@ -50,10 +50,10 @@
       "code":                       177,
       "details":                    [
                                       "KREF+2016-04-20T20:53:12.74",
-                                      "0Z",
+                                      "0Z ",
                                       "SVWZ+Black TAN1:113040 IBAN",
                                       ": DE29200411111234567890 BI",
-                                      "C: COBADEHD001"
+                                      "C: COBADEHD001 "
                                     ],
       "not_implemented_fields":     [],
       "prima_nota":                 804,

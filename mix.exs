@@ -4,7 +4,7 @@ defmodule Mt940.Mixfile do
   def project do
     [
       app: :mt940,
-      version: "1.1.1",
+      version: "1.1.2",
       elixir: "~> 1.3",
       description: description(),
       package: package(),

@@ -17,7 +17,7 @@ The MT94x category of SWIFT messages are meant for customer statements and cash 
 Include a dependency in your `mix.exs`:
 
 ```elixir
-deps: [{:mt940, "~> 1.1.1"}, …]
+deps: [{:mt940, "~> 1.1.2"}, …]
 ```
 
 `use MT940` and `parse!` the raw input:
